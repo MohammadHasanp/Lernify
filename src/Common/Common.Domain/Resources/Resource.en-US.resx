@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="V" xml:space="preserve">
+    <value>The account name cannot be empty</value>
+  </data>
+  <data name="ACC_VAL_1_Floating" xml:space="preserve">
+    <value>Floating account code cannot be empty</value>
+  </data>
+  <data name="ACD_VAL_1_Floating" xml:space="preserve">
+    <value>Floating account code cannot be empty</value>
+  </data>
+  <data name="ACC_VAL_1_Title" xml:space="preserve">
+    <value>Account title cannot be empty</value>
+  </data>
+  <data name="ACC_VAL_2_Detail" xml:space="preserve">
+    <value>Enter the detailed account code correctly</value>
+  </data>
+  <data name="ACC_VAL_2_Moein" xml:space="preserve">
+    <value>Please enter the fixed account code correctly</value>
+  </data>
+  <data name="ACC_VAL_2_Total" xml:space="preserve">
+    <value>Enter the account code correctly</value>
+  </data>
+  <data name="ACD_ERR_5_DocumentItems" xml:space="preserve">
+    <value>The requested document items were not found</value>
+  </data>
+  <data name="ACD_VAL_2_Credit" xml:space="preserve">
+    <value>The credit amount cannot be negative</value>
+  </data>
+  <data name="ACD_VAL_2_Date" xml:space="preserve">
+    <value>The document date cannot be set in the future</value>
+  </data>
+  <data name="ACD_VAL_2_Debit" xml:space="preserve">
+    <value>The debit amount cannot be negative</value>
+  </data>
+  <data name="ACD_VAL_2_DocumentNumber" xml:space="preserve">
+    <value>Enter the document number correctly</value>
+  </data>
+  <data name="ACD_VAL_2_Total" xml:space="preserve">
+    <value>Enter the account code correctly</value>
+  </data>
+  <data name="ACD_VAL_2_Moein" xml:space="preserve">
+    <value>Please enter the fixed account code correctly</value>
+  </data>
+  <data name="ACD_VAL_2_Detail" xml:space="preserve">
+    <value>Enter the detailed account code correctly</value>
+  </data>
+  <data name="AMN_VAL_1_Name" xml:space="preserve">
+    <value>The name cannot be empty</value>
+  </data>
+  <data name="AMN_VAL_1_Description" xml:space="preserve">
+    <value>The description cannot be empty</value>
+  </data>
+  <data name="BUL_VAL_2_ConfirmationDeadline" xml:space="preserve">
+    <value>The reservation confirmation deadline must be zero or positive</value>
+  </data>
+  <data name="BUL_ERR_5_BuildingPolicyRules" xml:space="preserve">
+    <value>The building policy rule was not found</value>
+  </data>
+  <data name="BUL_ERR_5_ExtraServices" xml:space="preserve">
+    <value>The extra service was not found</value>
+  </data>
+  <data name="BUL_VAL_1_Address" xml:space="preserve">
+    <value>he building address cannot be empty</value>
+  </data>
+  <data name="BUL_VAL_1_Name" xml:space="preserve">
+    <value>he building  name cannot be empty</value>
+  </data>
+  <data name="BUL_VAL_2_Email" xml:space="preserve">
+    <value>Enter the email correctly</value>
+  </data>
+  <data name="BUL_VAL_2_Phone" xml:space="preserve">
+    <value>Enter the phone correctly</value>
+  </data>
+  <data name="BUL_VAL_1_RuleComment" xml:space="preserve">
+    <value>The role comment cannot be empty</value>
+  </data>
+  <data name="BUL_VAL_2_Price" xml:space="preserve">
+    <value>The extra service price cannot be negative</value>
+  </data>
+  <data name="LOC_VAL_1_Name" xml:space="preserve">
+    <value>The country name cannot be</value>
+  </data>
+  <data name="LOC_VAL_2_Code" xml:space="preserve">
+    <value>Enter the country code correctly</value>
+  </data>
+  <data name="FIY_ERR_5_Tariffs" xml:space="preserve">
+    <value>The desired tariff was not found</value>
+  </data>
+  <data name="FIY_VAL_2_StartDate" xml:space="preserve">
+    <value>The fiscal year cannot be in the past</value>
+  </data>
+  <data name="FIY_VAL_2_ExpiryDate" xml:space="preserve">
+    <value>The fiscal year cannot be in the past</value>
+  </data>
+  <data name="FIY_VAL_1_Description" xml:space="preserve">
+    <value>Description cannot be empty</value>
+  </data>
+  <data name="FIY_VAL_2_Discount" xml:space="preserve">
+    <value>Enter the discount amount correctly</value>
+  </data>
+  <data name="FIY_VAL_2_FullPrice" xml:space="preserve">
+    <value>Enter the fullPrice correctly</value>
+  </data>
+  <data name="FIY_VAL_2_HalfDayPrice" xml:space="preserve">
+    <value>Enter the half-day price correctly</value>
+  </data>
+  <data name="FIY_VAL_2_PersonAdditionalPrice" xml:space="preserve">
+    <value>Enter the price per person correctly</value>
+  </data>
+  <data name="FLO_VAL_2_FloorNumber" xml:space="preserve">
+    <value>Enter the floor number correctly</value>
+  </data>
+  <data name="HOL_ERR_5_HotelStaySessions" xml:space="preserve">
+    <value>The desired accommodation was not found</value>
+  </data>
+  <data name="HOL_ERR_5_HotelPolicyRules" xml:space="preserve">
+    <value>The requested law was not found</value>
+  </data>
+  <data name="HOL_VAL_2_Email" xml:space="preserve">
+    <value>Enter the email correctly</value>
+  </data>
+  <data name="HOL_VAL_1_Name" xml:space="preserve">
+    <value>Hotel name cannot be empty</value>
+  </data>
+  <data name="HOL_VAL_1_MainAddress" xml:space="preserve">
+    <value>Hotel address cannot be empty</value>
+  </data>
+  <data name="HOL_VAL_2_Phone" xml:space="preserve">
+    <value>Enter the phone number correctly</value>
+  </data>
+  <data name="HOL_VAL_1_RuleComment" xml:space="preserve">
+    <value>The text of the law cannot be empty</value>
+  </data>
+  <data name="HOL_VAL_1_StayCode" xml:space="preserve">
+    <value>Residence code cannot be empty</value>
+  </data>
+  <data name="IMG_VAL_1_ImageName" xml:space="preserve">
+    <value>The image cannot be empty</value>
+  </data>
+  <data name="IMG_VAL_1_Caption" xml:space="preserve">
+    <value>Image title cannot be empty</value>
+  </data>
+  <data name="IMG_VAL_2_Size" xml:space="preserve">
+    <value>The image size is not valid</value>
+  </data>
+  <data name="INV_VAL_1_StayCode" xml:space="preserve">
+    <value>Residence code cannot be empty</value>
+  </data>
+  <data name="INV_VAL_2_Discount" xml:space="preserve">
+    <value>Enter the discount amount correctly</value>
+  </data>
+  <data name="INV_VAL_2_FinalAmount" xml:space="preserve">
+    <value>Enter the final amount correctly</value>
+  </data>
+  <data name="INV_VAL_2_Amount" xml:space="preserve">
+    <value>Enter the amount correctly</value>
+  </data>
+  <data name="PSS_VAL_1_TextColor" xml:space="preserve">
+    <value>Text color value cannot be empty</value>
+  </data>
+  <data name="PSS_VAL_1_BackgroundColor" xml:space="preserve">
+    <value>The background color value cannot be empty</value>
+  </data>
+  <data name="PAS_VAL_1_Name" xml:space="preserve">
+    <value>Product or service name cannot be empty</value>
+  </data>
+  <data name="PAS_VAL_2_PriceBuy" xml:space="preserve">
+    <value>Enter the purchase price correctly</value>
+  </data>
+  <data name="PAS_VAL_2_PriceSell" xml:space="preserve">
+    <value>Enter the selling price correctly</value>
+  </data>
+  <data name="PAS_VAL_2_code" xml:space="preserve">
+    <value>Enter the product or service code correctly</value>
+  </data>
+  <data name="PSP_VAL_1_Name" xml:space="preserve">
+    <value>The name of the payment operator cannot be</value>
+  </data>
+  <data name="PSP_VAL_1_Properties" xml:space="preserve">
+    <value>Payment operator requirement values ​​cannot be empty</value>
+  </data>
+  <data name="RES_VAL_2_StandardAmount" xml:space="preserve">
+    <value>Enter the standard price correctly</value>
+  </data>
+  <data name="RES_VAL_2_DiscountAmount" xml:space="preserve">
+    <value>Enter the discount amount correctly</value>
+  </data>
+  <data name="RES_VAL_2_Taxes" xml:space="preserve">
+    <value>Set the tax amount correctly</value>
+  </data>
+  <data name="RES_VAL_2_CheckOutDate" xml:space="preserve">
+    <value>The checkout date cannot be in the past</value>
+  </data>
+  <data name="RES_VAL_2_CheckInData" xml:space="preserve">
+    <value>Check-in date cannot be in the past</value>
+  </data>
+  <data name="RES_ERR_5_ReservationServices" xml:space="preserve">
+    <value>The requested booking service was not found</value>
+  </data>
+  <data name="RES_VAL_2_NumberOfGuests" xml:space="preserve">
+    <value>Enter the number of guests correctly</value>
+  </data>
+  <data name="RES_VAL_2_ConfirmationDeadline" xml:space="preserve">
+    <value>Enter the reservation confirmation deadline correctly</value>
+  </data>
+  <data name="RES_VAL_2_NumberAdditionalPeople" xml:space="preserve">
+    <value>Enter the number of people correctly</value>
+  </data>
+  <data name="RES_VAL_2_Quantity" xml:space="preserve">
+    <value>Enter the service amount correctly</value>
+  </data>
+  <data name="RES_VAL_2_TotalPrice" xml:space="preserve">
+    <value>Enter the total price correctly</value>
+  </data>
+  <data name="ROL_VAL_1_Title" xml:space="preserve">
+    <value>Role title cannot be empty</value>
+  </data>
+  <data name="ROM_VAL_1_RoomNumber" xml:space="preserve">
+    <value>Room number cannot be empty</value>
+  </data>
+  <data name="RSS_VAL_1_TextColor" xml:space="preserve">
+    <value>Text color value cannot be empty</value>
+  </data>
+  <data name="RSS_VAL_1_BackgroundColor" xml:space="preserve">
+    <value>The background color value cannot be empty</value>
+  </data>
+  <data name="ROT_VAL_1_Name" xml:space="preserve">
+    <value>Room type title cannot be empty</value>
+  </data>
+  <data name="ROT_VAL_2_MaxCapacity" xml:space="preserve">
+    <value>Enter the housing room correctly</value>
+  </data>
+  <data name="ROT_VAL_2_MinCapacity" xml:space="preserve">
+    <value>Enter the minimum capacity correctly</value>
+  </data>
+  <data name="ROT_VAL_2_CountBedSingle" xml:space="preserve">
+    <value>Enter the correct number of beds for one person</value>
+  </data>
+  <data name="ROT_VAL_2_CountBedDouble" xml:space="preserve">
+    <value>Enter the number of double beds correctly</value>
+  </data>
+  <data name="ROT_VAL_2_CountBedKingSize" xml:space="preserve">
+    <value>Enter the number of king beds correctly</value>
+  </data>
+  <data name="SET_VAL_1_Value" xml:space="preserve">
+    <value>The value of the settings setting cannot be empty</value>
+  </data>
+  <data name="TRN_ERR_5_TransactionLogs" xml:space="preserve">
+    <value>The requested transaction log was not found</value>
+  </data>
+  <data name="TRN_VAL_1_Amount" xml:space="preserve">
+    <value>Enter the amount correctly</value>
+  </data>
+  <data name="TRN_VAL_1_TrackingCode" xml:space="preserve">
+    <value>Tracking code cannot be empty</value>
+  </data>
+  <data name="TRN_VAL_1_Result" xml:space="preserve">
+    <value>Transaction result cannot be empty</value>
+  </data>
+  <data name="URG_VAL_1_Title" xml:space="preserve">
+    <value>Group title cannot be empty</value>
+  </data>
+  <data name="URG_VAL_2_Discount" xml:space="preserve">
+    <value>Enter the discount amount correctly</value>
+  </data>
+  <data name="URG_VAL_2_Commission" xml:space="preserve">
+    <value>Enter the commission amount correctly</value>
+  </data>
+  <data name="URG_VAL_2_DisplayRank" xml:space="preserve">
+    <value>Enter the display order correctly</value>
+  </data>
+  <data name="USR_ERR_3_SubScriptionCode" xml:space="preserve">
+    <value>The subscription code entered is duplicate</value>
+  </data>
+  <data name="USR_VAL_2_SubScriptionCode" xml:space="preserve">
+    <value>Enter the subscription code correctly</value>
+  </data>
+  <data name="USR_VAL_1_Password" xml:space="preserve">
+    <value>Password cannot be empty</value>
+  </data>
+  <data name="USR_ERR_5_UserTokens" xml:space="preserve">
+    <value>The requested token was not found</value>
+  </data>
+  <data name="USR_ERR_5_UserOccasions" xml:space="preserve">
+    <value>The desired event was not found</value>
+  </data>
+  <data name="USR_ERR_5_UserAttachments" xml:space="preserve">
+    <value>The requested attachment was not found</value>
+  </data>
+  <data name="USR_ERR_5_UserAgreements" xml:space="preserve">
+    <value>The desired contract was not found</value>
+  </data>
+  <data name="USR_VAL_1_Family" xml:space="preserve">
+    <value>Last name cannot be empty</value>
+  </data>
+  <data name="USR_VAL_3_PhoneNumber" xml:space="preserve">
+    <value>The phone number entered is a duplicate</value>
+  </data>
+  <data name="USR_VAL_3_Email" xml:space="preserve">
+    <value>The email you entered is a duplicate</value>
+  </data>
+  <data name="USR_VAL_2_Email" xml:space="preserve">
+    <value>Enter the email correctly</value>
+  </data>
+  <data name="USR_VAL_2_Commission" xml:space="preserve">
+    <value>Enter the commission correctly</value>
+  </data>
+  <data name="USR_VAL_2_Discount" xml:space="preserve">
+    <value>Enter the discount amount correctly</value>
+  </data>
+  <data name="USR_VAL_2_StartDate" xml:space="preserve">
+    <value>The start date cannot be in the past</value>
+  </data>
+  <data name="USR_VAL_2_EndDate" xml:space="preserve">
+    <value>The end date cannot be in the past</value>
+  </data>
+  <data name="USR_VAL_1_Caption" xml:space="preserve">
+    <value>title cannot be empty</value>
+  </data>
+  <data name="USR_VAL_2_EventDate" xml:space="preserve">
+    <value>The date of the event cannot be in the past</value>
+  </data>
+  <data name="USR_VAL_1_AccessToken" xml:space="preserve">
+    <value>Access token cannot be empty</value>
+  </data>
+  <data name="USR_VAL_1_RefreshToken" xml:space="preserve">
+    <value>Refresh token cannot be empty</value>
+  </data>
+  <data name="USR_VAL_2_TokenExpireDate" xml:space="preserve">
+    <value>The access token date cannot be in the past</value>
+  </data>
+  <data name="USR_VAL_2_RefreshTokenExpireDate" xml:space="preserve">
+    <value>The token refresh date cannot be in the past</value>
+  </data>
+  <data name="VCO_VAL_2_Code" xml:space="preserve">
+    <value>Enter the verification code correctly</value>
+  </data>
+  <data name="VCO_VAL_2_ExpirationDate" xml:space="preserve">
+    <value>The verification code expiration date cannot be in the past</value>
+  </data>
+  <data name="AccountType_Asset" xml:space="preserve">
+    <value>Asset</value>
+  </data>
+  <data name="AccountType_Equity" xml:space="preserve">
+    <value>Equity</value>
+  </data>
+  <data name="AccountType_Expense" xml:space="preserve">
+    <value>Expense</value>
+  </data>
+  <data name="AccountType_Liability" xml:space="preserve">
+    <value>Liability</value>
+  </data>
+  <data name="AccountType_Revenue" xml:space="preserve">
+    <value>Revenue</value>
+  </data>
+  <data name="AttachmentType_NationalCard" xml:space="preserve">
+    <value>NationalCard</value>
+  </data>
+  <data name="AttachmentType_Passport" xml:space="preserve">
+    <value>Passport</value>
+  </data>
+  <data name="AttachmentType_Visa" xml:space="preserve">
+    <value>Visa</value>
+  </data>
+  <data name="BookingSource_Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="BookingSource_WalkIn" xml:space="preserve">
+    <value>WalkIn</value>
+  </data>
+  <data name="BookingSource_Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="CostAcceptor_Booker" xml:space="preserve">
+    <value>Booker</value>
+  </data>
+  <data name="CostAcceptor_Guest" xml:space="preserve">
+    <value>Guest</value>
+  </data>
+  <data name="Gender_Female" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="Gender_Male" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="Gender_None" xml:space="preserve">
+    <value>Not Specified</value>
+  </data>
+  <data name="ItemType_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="ItemType_Service" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="OccasionType_Birthday" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="OperationType_Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="OperationType_SignUp" xml:space="preserve">
+    <value>SignUp</value>
+  </data>
+  <data name="PaymentGatewayType_IPG" xml:space="preserve">
+    <value>Card Reader</value>
+  </data>
+  <data name="PaymentGatewayType_POS" xml:space="preserve">
+    <value>POS Terminal</value>
+  </data>
+  <data name="PaymentMethod_Cashed" xml:space="preserve">
+    <value>Cashed</value>
+  </data>
+  <data name="PaymentMethod_CashedAndInstallment" xml:space="preserve">
+    <value>Cash And Installment</value>
+  </data>
+  <data name="PaymentMethod_Installment" xml:space="preserve">
+    <value>Installment</value>
+  </data>
+  <data name="PaymentType_Deposit" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="PaymentType_Payment" xml:space="preserve">
+    <value>Payment</value>
+  </data>
+  <data name="PaymentType_Refund" xml:space="preserve">
+    <value>Refund</value>
+  </data>
+  <data name="PaymentType_Withdrawal" xml:space="preserve">
+    <value>Withdrawal</value>
+  </data>
+  <data name="PayStatus_Canceled" xml:space="preserve">
+    <value>Canceled</value>
+  </data>
+  <data name="PayStatus_ConnectedToBank" xml:space="preserve">
+    <value>Connected to bank</value>
+  </data>
+  <data name="PayStatus_HonoraryReservation" xml:space="preserve">
+    <value>Honorary Reservation</value>
+  </data>
+  <data name="PayStatus_Paid" xml:space="preserve">
+    <value>Paid</value>
+  </data>
+  <data name="PayStatus_Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="ReservationStatus_Admission" xml:space="preserve">
+    <value>Admission</value>
+  </data>
+  <data name="ReservationStatus_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="RoomStatus_Available" xml:space="preserve">
+    <value>Available</value>
+  </data>
+  <data name="RoomStatus_Blocked" xml:space="preserve">
+    <value>Blocked</value>
+  </data>
+  <data name="RoomStatus_CheckedOutToday" xml:space="preserve">
+    <value>Check-out Today</value>
+  </data>
+  <data name="RoomStatus_CheckedOutTomorrow" xml:space="preserve">
+    <value>Check-out Tomorrow</value>
+  </data>
+  <data name="RoomStatus_Cleaning" xml:space="preserve">
+    <value>Cleaning</value>
+  </data>
+  <data name="RoomStatus_DepartureToday" xml:space="preserve">
+    <value>Departure Today</value>
+  </data>
+  <data name="RoomStatus_DepartureTomorrow" xml:space="preserve">
+    <value>Departure Tomorrow</value>
+  </data>
+  <data name="RoomStatus_Exclusive" xml:space="preserve">
+    <value>Exclusive</value>
+  </data>
+  <data name="RoomStatus_Housekeeping" xml:space="preserve">
+    <value>House keeping</value>
+  </data>
+  <data name="RoomStatus_None" xml:space="preserve">
+    <value>Not Specified</value>
+  </data>
+  <data name="RoomStatus_Occupied" xml:space="preserve">
+    <value>Occupied</value>
+  </data>
+  <data name="RoomStatus_OutOfOrder" xml:space="preserve">
+    <value>Out Of Order</value>
+  </data>
+  <data name="RoomStatus_OutOfService" xml:space="preserve">
+    <value>Out of service</value>
+  </data>
+  <data name="RoomStatus_Reserved" xml:space="preserve">
+    <value>Reserved</value>
+  </data>
+  <data name="RuleType_Animal" xml:space="preserve">
+    <value>Animal</value>
+  </data>
+  <data name="RuleType_Cancellation" xml:space="preserve">
+    <value>Cancellation</value>
+  </data>
+  <data name="RuleType_Delivery" xml:space="preserve">
+    <value>Delivery</value>
+  </data>
+  <data name="RuleType_Invalidation" xml:space="preserve">
+    <value>Invalidation</value>
+  </data>
+  <data name="RuleType_Public" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="RuleType_Reservation" xml:space="preserve">
+    <value>Reservation</value>
+  </data>
+  <data name="UnitPrice_Rial" xml:space="preserve">
+    <value>Rial (Iranian currency)</value>
+  </data>
+  <data name="UnitPrice_Toman" xml:space="preserve">
+    <value>Toman (Iranian currency)</value>
+  </data>
+  <data name="UserNationality_Foreign" xml:space="preserve">
+    <value>Foreign</value>
+  </data>
+  <data name="UserNationality_Iranian" xml:space="preserve">
+    <value>Iranian</value>
+  </data>
+  <data name="UserNationality_None" xml:space="preserve">
+    <value>Not Specified</value>
+  </data>
+  <data name="UserType_Legal" xml:space="preserve">
+    <value>Legal</value>
+  </data>
+  <data name="UserType_None" xml:space="preserve">
+    <value>Not Specified</value>
+  </data>
+  <data name="UserType_Real" xml:space="preserve">
+    <value>Real</value>
+  </data>
+  <data name="AccessToken" xml:space="preserve">
+    <value>Access token is mandatory.</value>
+  </data>
+  <data name="AccountName" xml:space="preserve">
+    <value>Account name is required.</value>
+  </data>
+  <data name="BackgroundColor" xml:space="preserve">
+    <value>Text color is mandatory.</value>
+  </data>
+  <data name="CheckInTime" xml:space="preserve">
+    <value>The entry time cannot be in the past.</value>
+  </data>
+  <data name="CheckOutTime" xml:space="preserve">
+    <value>The departure time can be in the past.</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Enter the code correctly.</value>
+  </data>
+  <data name="CodeVerification" xml:space="preserve">
+    <value>Enter the verification code correctly.</value>
+  </data>
+  <data name="Commission" xml:space="preserve">
+    <value>Enter the commission correctly.</value>
+  </data>
+  <data name="CountBadDouble" xml:space="preserve">
+    <value>Enter the number of double beds correctly.</value>
+  </data>
+  <data name="CountBadKingSize" xml:space="preserve">
+    <value>Enter the number of king beds correctly.</value>
+  </data>
+  <data name="CountBadSingle" xml:space="preserve">
+    <value>Enter the number of single beds correctly.</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>Enter the credit amount correctly.</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>The current password must be more than 4 characters.</value>
+  </data>
+  <data name="CurrentPassword_Null" xml:space="preserve">
+    <value>New password is required.</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>The document date cannot be in the past.</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>Enter the debt amount correctly.</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description is required.</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Enter the detailed account code correctly.</value>
+  </data>
+  <data name="Device" xml:space="preserve">
+    <value>Device is mandatory.</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>The discount percentage should not be less than zero.</value>
+  </data>
+  <data name="DisplayRank" xml:space="preserve">
+    <value>Enter the display rating correctly.</value>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>Enter the document number correctly.</value>
+  </data>
+  <data name="EconomicCode" xml:space="preserve">
+    <value>The economic code is mandatory.</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Enter the email correctly.</value>
+  </data>
+  <data name="Email_Null" xml:space="preserve">
+    <value>Email is required.</value>
+  </data>
+  <data name="EventDate" xml:space="preserve">
+    <value>History cannot be in the past.</value>
+  </data>
+  <data name="ExpiryDate" xml:space="preserve">
+    <value>The end date cannot be in the past.</value>
+  </data>
+  <data name="Family" xml:space="preserve">
+    <value>Last name is required.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="FileName_Just" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="FinalPrice" xml:space="preserve">
+    <value>Enter the final price correctly.</value>
+  </data>
+  <data name="Floating" xml:space="preserve">
+    <value>Floating is required.</value>
+  </data>
+  <data name="FullPrice" xml:space="preserve">
+    <value>Enter the price correctly. Enter.</value>
+  </data>
+  <data name="HalfDayPrice" xml:space="preserve">
+    <value>Enter the half-day price correctly.</value>
+  </data>
+  <data name="IpAddress" xml:space="preserve">
+    <value>IP address is mandatory.</value>
+  </data>
+  <data name="MainAddress" xml:space="preserve">
+    <value>Address is required.</value>
+  </data>
+  <data name="AdultCapacity" xml:space="preserve">
+    <value>حداکثر ظرفیت بزرگسالان را به درستی وارد کنید</value>
+  </data>
+  <data name="InfantCapacity" xml:space="preserve">
+    <value>Enter the minimum capacity correctly.</value>
+  </data>
+  <data name="Moein" xml:space="preserve">
+    <value>Enter the moein account code correctly.</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name is required.</value>
+  </data>
+  <data name="NationalCode" xml:space="preserve">
+    <value>The national code is invalid.</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>The password must be more than 4 characters.</value>
+  </data>
+  <data name="Password_Null" xml:space="preserve">
+    <value>password is required.</value>
+  </data>
+  <data name="PersonAdditionalPrice" xml:space="preserve">
+    <value>Enter the additional person price correctly.</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>The phone number is invalid.</value>
+  </data>
+  <data name="Phone_Null" xml:space="preserve">
+    <value>Hotel number is required.</value>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>Postal code is required.</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Enter the price correctly.</value>
+  </data>
+  <data name="PriceBuy" xml:space="preserve">
+    <value>Enter the purchase price correctly.</value>
+  </data>
+  <data name="PriceSell" xml:space="preserve">
+    <value>Enter the selling price correctly.</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Enter the values ​​correctly.</value>
+  </data>
+  <data name="RefreshToken" xml:space="preserve">
+    <value>Token refresh is mandatory.</value>
+  </data>
+  <data name="RefreshTokenExpireDate" xml:space="preserve">
+    <value>Enter the refresh token expiration date correctly.</value>
+  </data>
+  <data name="RegistrationNumber" xml:space="preserve">
+    <value>Registration number is mandatory.</value>
+  </data>
+  <data name="ReservationTime" xml:space="preserve">
+    <value>Enter the correct reservation confirmation deadline time.</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>The transaction result is mandatory.</value>
+  </data>
+  <data name="RoomNumber" xml:space="preserve">
+    <value>Room number is required.</value>
+  </data>
+  <data name="RuleComment" xml:space="preserve">
+    <value>Rule is required.</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Enter the size correctly.</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>The start date cannot be in the past.</value>
+  </data>
+  <data name="StayCode" xml:space="preserve">
+    <value>Residence code is mandatory.</value>
+  </data>
+  <data name="TextColor" xml:space="preserve">
+    <value>Background color is mandatory.</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title is required.</value>
+  </data>
+  <data name="TokenExpireDate" xml:space="preserve">
+    <value>Enter the token expiration date correctly.</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Enter the account code correctly.</value>
+  </data>
+  <data name="TrackingCode" xml:space="preserve">
+    <value>Tracking code is required.</value>
+  </data>
+  <data name="SuccessMessage" xml:space="preserve">
+    <value>The operation was successful.</value>
+  </data>
+  <data name="ErrorMessage" xml:space="preserve">
+    <value>The operation failed.</value>
+  </data>
+  <data name="NotFoundMessage" xml:space="preserve">
+    <value>Information not found.</value>
+  </data>
+  <data name="UTI_ERR_1_File" xml:space="preserve">
+    <value>File not uploaded.</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Enter the value correctly.</value>
+  </data>
+  <data name="NumberOfGuests" xml:space="preserve">
+    <value>Enter the number of guests correctly.</value>
+  </data>
+  <data name="NumberOfPeople" xml:space="preserve">
+    <value>Enter the number of people correctly.</value>
+  </data>
+  <data name="NumberAdditionalPeople" xml:space="preserve">
+    <value>Enter the number of additional people correctly.</value>
+  </data>
+  <data name="StandardAmount" xml:space="preserve">
+    <value>Enter the standard price correctly.</value>
+  </data>
+  <data name="Taxes" xml:space="preserve">
+    <value>Enter taxes correctly.</value>
+  </data>
+  <data name="CountChild" xml:space="preserve">
+    <value>Enter the number of children correctly.</value>
+  </data>
+  <data name="DiscountAmount" xml:space="preserve">
+    <value>Enter the discount price correctly.</value>
+  </data>
+  <data name="NumberStar" xml:space="preserve">
+    <value>Enter the number of hotel stars correctly.</value>
+  </data>
+  <data name="ChildCapacity" xml:space="preserve">
+    <value>Enter the capacity of the children correctly.</value>
+  </data>
+  <data name="ACC_VAL_1_AccountName" xml:space="preserve">
+    <value>Account name cannot be empty.</value>
+  </data>
+  <data name="BUL_VAL_3_Name" xml:space="preserve">
+    <value>The building name cannot be duplicated.</value>
+  </data>
+  <data name="HOL_VAL_1_SealName" xml:space="preserve">
+    <value>The seal cannot be</value>
+  </data>
+  <data name="HOL_VAL_2_NumberStar" xml:space="preserve">
+    <value>Enter the number of stars correctly</value>
+  </data>
+  <data name="HOL_VAL_1_EconomicCode" xml:space="preserve">
+    <value>The economic code cannot be</value>
+  </data>
+  <data name="HOL_VAL_1_PostalCode" xml:space="preserve">
+    <value>Postal code cannot be empty</value>
+  </data>
+  <data name="HOL_VAL_1_RegistrationNumber" xml:space="preserve">
+    <value>The registration number cannot be</value>
+  </data>
+  <data name="HOL_VAL_2_NationalCode" xml:space="preserve">
+    <value>Enter the national code correctly</value>
+  </data>
+</root>

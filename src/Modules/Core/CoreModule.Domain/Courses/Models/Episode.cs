@@ -1,0 +1,43 @@
+﻿using Common.Domain;
+using Common.Domain.Exceptions;
+using Common.Domain.Utilities;
+using static Common.Domain.Exceptions.BaseDomainExceotion;
+
+namespace CoreModule.Domain.Courses.Models;
+
+public class Episode : Entity
+{
+    public Guid SectionId { get; internal set; }
+    public string Title { get; private set; } = null!;
+    public string EnglishTitle { get; private set; } = null!;
+    public Guid Token { get; private set; }
+    public TimeSpan Time { get; private set; }
+    public string VideoName { get; private set; } = null!;
+    public string? AttachmentName { get; private set; }
+    public bool IsActive { get; private set; }
+
+    public Episode(string title, Guid token, TimeSpan time, string videoName, string? attachmentName, bool isActive, string englishTitle)
+    {
+        Guard(videoName, title, englishTitle);
+        Title = title;
+        Token = token;
+        Time = time;
+        VideoName = videoName;
+        AttachmentName = attachmentName;
+        IsActive = isActive;
+        EnglishTitle = englishTitle;
+    }
+
+    public void ToggleStatus()
+    {
+        IsActive = !IsActive;
+    }
+
+    void Guard(string videoName, string title, string englishTitle)
+    {
+        NullOrEmptyDomainDataException.CheckString((videoName, nameof(videoName)), (title, nameof(title)), (englishTitle, nameof(englishTitle)));
+
+        if (englishTitle.IsUniCode())
+            throw new InvalidDomainDataException("englishTitle Invalid");
+    }
+}
