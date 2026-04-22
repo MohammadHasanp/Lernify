@@ -7,6 +7,8 @@ namespace CoreModule.Domain.Categories.Models;
 
 public class CourseCategory : AggregateRoot
 {
+    private CourseCategory() { }
+
     public string Title { get; private set; } = null!;
     public string Slug { get; private set; } = null!;
     public Guid? ParentId { get; private set; }

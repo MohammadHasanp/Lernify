@@ -12,7 +12,7 @@ public class DeleteCourseCategoryHandler(ICourseCategoryRepository repository) :
         if (category == null)
             return OperationResult.NotFound();
 
-        await _repository.Delete(category);
+        _repository.Delete(category);
         await _repository.Save();
         return OperationResult.Success();
     }

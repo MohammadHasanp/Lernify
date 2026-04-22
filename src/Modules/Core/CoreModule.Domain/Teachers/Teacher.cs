@@ -8,6 +8,7 @@ namespace CoreModule.Domain.Teachers;
 
 public class Teacher : AggregateRoot
 {
+    private Teacher() { }
     public Guid UserId { get; private set; }
     public string UserName { get; private set; } = null!;
     public string CvFileName { get; private set; } = null!;

@@ -18,6 +18,7 @@
   </Folder>
   <Folder Name="/src/Modules/Core/">
     <Project Path="src/Modules/Core/CoreModule.Application/CoreModule.Application.csproj" Id="c4e35626-2841-4612-a1b0-584fd1dd729b" />
+    <Project Path="src/Modules/Core/CoreModule.Config/CoreModule.Config.csproj" Id="e47ea41f-4923-4f95-8619-0588247d8af7" />
     <Project Path="src/Modules/Core/CoreModule.Domain/CoreModule.Domain.csproj" Id="f15234b1-6c66-45f3-8b21-e9cd6f522065" />
     <Project Path="src/Modules/Core/CoreModule.Facade/CoreModule.Facade.csproj" Id="b4c903ed-08e5-442a-b399-cce44fc6cba4" />
     <Project Path="src/Modules/Core/CoreModule.Infrastructure/CoreModule.Infrastructure.csproj" Id="c676651c-70e8-441d-8df5-e4e5d3d1ac4d" />
