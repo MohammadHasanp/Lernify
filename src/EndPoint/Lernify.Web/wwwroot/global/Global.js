@@ -171,7 +171,7 @@ function deleteCookie(cookieName) {
 $(document).ready(function () {
     loadCkeditor4();
     var result = getCookie("SystemAlert");
-  
+
     if (result) {
         result = JSON.parse(result);
         if (result.Status === 200) {

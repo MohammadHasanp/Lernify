@@ -2,6 +2,7 @@
 using CoreModule.Application.Teachers.AcceptedRequest;
 using CoreModule.Application.Teachers.Register;
 using CoreModule.Application.Teachers.RejectedRequest;
+using CoreModule.Query.Teachers.DTOs;
 
 namespace CoreModule.Facade.Teachers;
 
@@ -10,4 +11,6 @@ public interface ITeacherFacede
     public Task<OperationResult> Register(RegisterTeacherCommand command);
     public Task<OperationResult> Rejected(RejectedTeacherRequestCommand command);
     public Task<OperationResult> Accepted(AcceptedTeacherRequestCommand command);
+    public Task<TeacherDto?> GetByUserId(Guid userId);
+    public Task<List<TeacherDto>> GetList();
 }
