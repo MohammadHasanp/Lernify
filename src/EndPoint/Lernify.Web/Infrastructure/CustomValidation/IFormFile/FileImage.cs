@@ -27,15 +27,11 @@ namespace Lernify.Web.Infrastructure.CustomValidation.IFormFile
     {
         public static bool IsImage(this Microsoft.AspNetCore.Http.IFormFile file)
         {
-            try
-            {
-                var img = Image.FromStream(file.OpenReadStream());
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            if (string.IsNullOrEmpty(file.FileName)) return false;
+
+            var path = Path.GetExtension(file.FileName);
+            path = path.ToLower();
+            return path is ".jpg" or ".png" or ".bmp" or ".svg" or ".jpeg";
         }
     }
 }

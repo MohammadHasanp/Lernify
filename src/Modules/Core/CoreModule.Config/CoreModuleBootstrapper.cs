@@ -1,11 +1,12 @@
-﻿namespace CoreModule.Config;
+﻿using CoreModule.Domain.Categories.Services;
+
+namespace CoreModule.Config;
 
 using Common.Application.FileUtil.StorageFactory;
 using Common.Application.FileUtil.StorageInterfaces;
 using Common.Application.FileUtil.StorageServices;
 using CoreModule.Application._Utilities;
 using CoreModule.Application.CourseCategories.Create;
-using CoreModule.Domain.Categories.DomainServices;
 using CoreModule.Domain.Courses.Service;
 using CoreModule.Domain.Teachers.Service;
 using CoreModule.Facade;

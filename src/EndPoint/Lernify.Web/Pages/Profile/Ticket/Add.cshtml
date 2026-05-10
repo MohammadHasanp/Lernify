@@ -1,78 +1,39 @@
 ﻿@page
 @model Lernify.Web.Pages.Profile.Ticket.AddModel
-@section meta {
-    <link rel="stylesheet" href="/css/profile.min.css">
+@{
+    Layout = "Shared/_ProfileLayout";
+    ViewData["Title"] = "افزودن تیکت";
 }
-<main>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 breadcrumb">
-                <ul class="">
-                    <li>
-                        <a href="/">
-                            خانه
-                            <i class="fa fa-chevron-left"></i>
-                        </a>
-                    </li>
+<div class="row ">
+    <div class="col-12 info shadow pl-0 pr-0">
+        <p class="title">
+            <i class="fa fa-address-card-o"></i>
+            افزودن تیکت
+        </p>
+        <div class="info-body p-2">
+            <form method="post" class="row">
 
-                    <li>
-                        <a href="/Profile">
-                            پنل کاربری
-                            <i class="fa fa-chevron-left"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Profile/Ticket">
-                            تیکت ها
-                            <i class="fa fa-chevron-left"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="current">
-                            افزودن تیکت
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-
-            <partial name="Shared/_ProfileSidbar" />
-
-            <div class="col-12 col-xl-9 col-lg-9 col-md-8 profile-body">
-                <div class="row ">
-                    <div class="col-12 info shadow pl-0 pr-0">
-                        <p class="title">
-                            <i class="fa fa-address-card-o"></i>
-                            افزودن تیکت
-                        </p>
-                        <div class="info-body p-2">
-                            <form method="post" class="row">
-
-                                <div class="col-12">
-                                    <p class="mb-0">
-                                        <i class="fa fa-ticket"></i>
-                                        عنوان تیکت :
-                                    </p>
-                                    <input asp-for="Title" type="text" class="form-control">
-                                    <span class="text-danger" asp-validation-for="Title"></span>
-                                </div>
-
-                                <div class="col-12">
-                                    <p class="mb-0">
-                                        <i class="fa fa-ticket-alt"></i>
-                                        متن تیکت :
-                                    </p>
-                                    <textarea asp-for="@Model.Text" type="text" class="form-control"></textarea>
-                                    <span class="text-danger" asp-validation-for="@Model.Text"></span>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn  btn-save  mt-3">ویرایش اطلاعات</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                <div class="col-12">
+                    <p class="mb-0">
+                        <i class="fa fa-ticket"></i>
+                        عنوان تیکت :
+                    </p>
+                    <input asp-for="Title" type="text" class="form-control">
+                    <span class="text-danger" asp-validation-for="Title"></span>
                 </div>
-            </div>
+
+                <div class="col-12">
+                    <p class="mb-0">
+                        <i class="fa fa-ticket-alt"></i>
+                        متن تیکت :
+                    </p>
+                    <textarea asp-for="@Model.Text" type="text" class="form-control"></textarea>
+                    <span class="text-danger" asp-validation-for="@Model.Text"></span>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn  btn-save  mt-3">ویرایش اطلاعات</button>
+                </div>
+            </form>
         </div>
     </div>
-</main>
+</div>

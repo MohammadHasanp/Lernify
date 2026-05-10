@@ -4,7 +4,6 @@ using Common.Domain.Utilities;
 using Common.Domain.ValueObjects;
 using CoreModule.Domain.Courses.Enums;
 using CoreModule.Domain.Courses.Service;
-using CoreModule.Domain.Teachers;
 
 namespace CoreModule.Domain.Courses.Models;
 
@@ -21,6 +20,7 @@ public class Course : AggregateRoot
     public string? VideoName { get; private set; }
     public CourseStatus CourseStatus { get; private set; }
     public CourseLevel CourseLevel { get; private set; }
+    public CourseActionStatus CourseActionStatus { get; private set; }
     public int Price { get; private set; }
     public DateTimeOffset LastUpdate { get; private set; }
     public SeoData? SeoData { get; private set; }
@@ -28,7 +28,7 @@ public class Course : AggregateRoot
     public List<Section> Sections { get; private set; } = [];
 
     public Course(Guid teacherId, string title, string description, string imageName, string? videoName, ICourseService service,
-        CourseLevel courseLevel, int price, SeoData? seoData, Guid subCategoryId, Guid categoryId, string slug)
+        CourseLevel courseLevel, int price, SeoData? seoData, Guid subCategoryId, Guid categoryId, string slug, CourseActionStatus actionStatus)
     {
         Gurad(title, description, imageName, slug, service);
         TeacherId = teacherId;
@@ -37,6 +37,7 @@ public class Course : AggregateRoot
         ImageName = imageName;
         VideoName = videoName;
         CourseStatus = CourseStatus.StartSoon;
+        CourseActionStatus = actionStatus;
         CourseLevel = courseLevel;
         Price = price;
         LastUpdate = DateTimeOffset.UtcNow;
@@ -48,7 +49,7 @@ public class Course : AggregateRoot
     }
 
     public void Edit(string title, string description, string imageName, string? videoName, ICourseService service,
-        CourseLevel courseLevel, CourseStatus courseStatus, int price, SeoData? seoData, Guid subCategoryId, Guid categoryId, string slug)
+        CourseLevel courseLevel, CourseStatus courseStatus, int price, SeoData? seoData, Guid subCategoryId, Guid categoryId, string slug, CourseActionStatus actionStatus)
     {
         Gurad(title, description, imageName, slug, service);
         Title = title;
@@ -57,6 +58,7 @@ public class Course : AggregateRoot
         VideoName = videoName;
         CourseStatus = courseStatus;
         CourseLevel = courseLevel;
+        CourseActionStatus = actionStatus;
         Price = price;
         LastUpdate = DateTimeOffset.UtcNow;
         SeoData = seoData;

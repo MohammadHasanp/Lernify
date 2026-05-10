@@ -1,7 +1,6 @@
 ﻿using Common.Application;
 using Common.Application.FileUtil.Enums;
 using Common.Application.FileUtil.StorageFactory;
-using Common.Application.FileUtil.StorageInterfaces;
 using Common.Application.FileUtil.Validations;
 using CoreModule.Application._Utilities;
 using CoreModule.Domain.Courses.Models;
@@ -21,7 +20,7 @@ public class CreateCourseHandler(ICourseRepository repository, ICourseService se
         var imageName = await storageService.SaveFileAndGenerateName(request.ImageFile, CoreModuleDirectories.CourseImages);
 
         string? videoName = null;
-        Guid courseId = Guid.NewGuid();
+        var courseId = Guid.NewGuid();
 
         if (request.VideoFile != null)
             if (request.VideoFile.IsValidVideoFile())
@@ -32,7 +31,7 @@ public class CreateCourseHandler(ICourseRepository repository, ICourseService se
                 return OperationResult.Error("فایل وارد شده نامعتبر است");
 
         var course = new Course(request.TeacherId, request.Title, request.Description, imageName, videoName, _courseService, request.CourseLevel,
-            request.Price, request.SeoData, request.SubCategoryId, request.CategoryId, request.Slug)
+            request.Price, request.SeoData, request.SubCategoryId, request.CategoryId, request.Slug, request.ActionStatus)
         {
             Id = courseId,
         };

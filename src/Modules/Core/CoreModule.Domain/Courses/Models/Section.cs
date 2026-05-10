@@ -10,8 +10,8 @@ public class Section : Entity
     public string Title { get; private set; } = null!;
     public int DisplayOrder { get; private set; }
 
-    public List<Episode> Episodes { get; private set; } = [];
-
+    public List<Episode> Episodes { get; private set; } = []; 
+    
     public Section(string title, int displayOrder)
     {
         Guard(title, displayOrder);

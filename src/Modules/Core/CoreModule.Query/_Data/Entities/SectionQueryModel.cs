@@ -1,11 +1,10 @@
 ﻿using Common.Domain;
-using CoreModule.Domain.Courses.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreModule.Query._Data.Entities;
 
-[Table("Sections", Schema = "dbo")]
+[Table("Sections", Schema = "course")]
 class SectionQueryModel : Entity
 {
     public Guid CourseId { get; internal set; }

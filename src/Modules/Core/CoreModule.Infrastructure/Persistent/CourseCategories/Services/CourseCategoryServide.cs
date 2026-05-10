@@ -1,5 +1,5 @@
-﻿using CoreModule.Domain.Categories.DomainServices;
-using CoreModule.Domain.Categories.Repository;
+﻿using CoreModule.Domain.Categories.Repository;
+using CoreModule.Domain.Categories.Services;
 
 namespace CoreModule.Infrastructure.Persistent.CourseCategories.Services;
 

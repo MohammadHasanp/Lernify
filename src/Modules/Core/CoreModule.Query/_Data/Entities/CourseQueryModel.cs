@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreModule.Query._Data.Entities;
 
-[Table("Courses", Schema = "course")]
+[Table("Courses", Schema = "dbo")]
 class CourseQueryModel : Entity
 {
     public Guid TeacherId { get; private set; }
@@ -32,6 +32,7 @@ class CourseQueryModel : Entity
     [MaxLength(100)]
     public string? VideoName { get; private set; }
     public CourseStatus CourseStatus { get; private set; }
+    public CourseActionStatus CourseActionStatus { get; private set; }
     public CourseLevel CourseLevel { get; private set; }
     public int Price { get; private set; }
     public DateTimeOffset LastUpdate { get; private set; }

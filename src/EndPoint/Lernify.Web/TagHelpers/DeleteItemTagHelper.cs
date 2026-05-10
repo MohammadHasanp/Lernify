@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
-using System.Diagnostics;
 
-namespace Eshop_RazorPage.TagHelpers
+namespace Lernify.Web.TagHelpers
 {
     [HtmlTargetElement("delete-item")]
     public class DeleteItemTagHelper : TagHelper

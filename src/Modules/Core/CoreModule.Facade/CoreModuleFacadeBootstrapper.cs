@@ -11,7 +11,7 @@ public static class CoreModuleFacadeBootstrapper
     public static IServiceCollection RegisterDependency(this IServiceCollection services, IConfiguration config)
     {
         services.AddScoped<ICourseFacade, CourseFacade>();
-        services.AddScoped<ITeacherFacede, TeacherFacade>();
+        services.AddScoped<ITeacherFaced, TeacherFacade>();
         services.AddScoped<ICourseCategoryFacade, CourseCategoryFacade>();
 
         return services;

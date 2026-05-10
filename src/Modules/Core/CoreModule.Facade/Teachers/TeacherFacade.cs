@@ -10,7 +10,7 @@ using MediatR;
 
 namespace CoreModule.Facade.Teachers;
 
-public class TeacherFacade(IMediator mediator) : ITeacherFacede
+public class TeacherFacade(IMediator mediator) : ITeacherFaced
 {
     private readonly IMediator _mediator = mediator;
     public async Task<OperationResult> Accepted(AcceptedTeacherRequestCommand command)

@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 namespace Lernify.Web.Pages.Profile
 {
     [BindProperties]
-    public class RegisterTeachersModel(ITeacherFacede facede) : BaseRazorPage
+    public class RegisterTeachersModel(ITeacherFaced faced) : BaseRazorPage
     {
-        private readonly ITeacherFacede _teacherFacede = facede;
+        private readonly ITeacherFaced _teacherFaced = faced;
 
         [Display(Name = "نام کاربری")]
         [Required(ErrorMessage = "{0} را وارد کنید")]
@@ -25,7 +25,7 @@ namespace Lernify.Web.Pages.Profile
 
         public async Task<IActionResult> OnGet()
         {
-            var teacher = await _teacherFacede.GetByUserId(User.GetUserId());
+            var teacher = await _teacherFaced.GetByUserId(User.GetUserId());
             if (teacher != null)
             {
                 if (teacher.TeacherStatus == TeacherStatus.Active || teacher.TeacherStatus == TeacherStatus.Inactive)
@@ -44,7 +44,7 @@ namespace Lernify.Web.Pages.Profile
 
         public async Task<IActionResult> OnPost()
         {
-            var result = await _teacherFacede.Register(new RegisterTeacherCommand(CvFile, User.GetUserId(), UserName));
+            var result = await _teacherFaced.Register(new RegisterTeacherCommand(CvFile, User.GetUserId(), UserName));
             return RedirectAndShowAlert(result, RedirectToPage("Index"));
         }
     }

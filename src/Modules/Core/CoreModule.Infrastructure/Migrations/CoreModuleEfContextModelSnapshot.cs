@@ -64,6 +64,9 @@ namespace CoreModule.Infrastructure.Migrations
                     b.Property<Guid>("CategoryId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("CourseActionStatus")
+                        .HasColumnType("int");
+
                     b.Property<int>("CourseLevel")
                         .HasColumnType("int");
 

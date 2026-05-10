@@ -1,15 +1,10 @@
-﻿using CoreModule.Domain.Categories.DomainServices;
-using CoreModule.Domain.Categories.Repository;
+﻿using CoreModule.Domain.Categories.Repository;
 using CoreModule.Domain.Courses.Repository;
-using CoreModule.Domain.Courses.Service;
 using CoreModule.Domain.Teachers.Repository;
-using CoreModule.Domain.Teachers.Service;
 using CoreModule.Infrastructure.Persistent._Context;
 using CoreModule.Infrastructure.Persistent.CourseCategories;
-using CoreModule.Infrastructure.Persistent.CourseCategories.Services;
 using CoreModule.Infrastructure.Persistent.Courses;
 using CoreModule.Infrastructure.Persistent.Teachers;
-using CoreModule.Infrastructure.Persistent.Teachers.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

@@ -6,7 +6,7 @@ using CoreModule.Query.Teachers.DTOs;
 
 namespace CoreModule.Facade.Teachers;
 
-public interface ITeacherFacede
+public interface ITeacherFaced
 {
     public Task<OperationResult> Register(RegisterTeacherCommand command);
     public Task<OperationResult> Rejected(RejectedTeacherRequestCommand command);

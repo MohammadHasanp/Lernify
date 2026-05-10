@@ -22,6 +22,6 @@ public class CreateCourseValidator : AbstractValidator<CreateCourseCommand>
            .JustImageFile();
 
         RuleFor(c => c.Price)
-           .GreaterThan(0).WithMessage("مبلغ باید بیشتر از صفر باشد ");
+           .GreaterThan(0).WithMessage("مبلغ باید بزرگ تر از صفر باشد ");
     }
 }

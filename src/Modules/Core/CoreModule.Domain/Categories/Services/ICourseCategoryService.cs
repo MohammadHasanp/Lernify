@@ -1,4 +1,4 @@
-﻿namespace CoreModule.Domain.Categories.DomainServices;
+﻿namespace CoreModule.Domain.Categories.Services;
 
 public interface ICourseCategoryService
 {

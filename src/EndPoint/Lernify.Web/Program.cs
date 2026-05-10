@@ -1,4 +1,5 @@
 using CoreModule.Config;
+using Lernify.Web.Infrastructure;
 using Lernify.Web.Infrastructure.JwtUtil;
 using TicketModule;
 using UserModule.Core;
@@ -17,7 +18,8 @@ public class Program
         var service = builder.Services;
         service.InitUserModule(builder.Configuration)
             .InitTicketModule(builder.Configuration)
-            .InitCoreModule(builder.Configuration);
+            .InitCoreModule(builder.Configuration)
+            .AddTransient<TeacherActionFilter>();
 
         service.AddJwtAuthentication(builder.Configuration);
         var app = builder.Build();

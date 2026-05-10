@@ -1,7 +1,7 @@
 ﻿using Common.Domain;
 using Common.Domain.Exceptions;
 using Common.Domain.Utilities;
-using CoreModule.Domain.Categories.DomainServices;
+using CoreModule.Domain.Categories.Services;
 
 namespace CoreModule.Domain.Categories.Models;
 

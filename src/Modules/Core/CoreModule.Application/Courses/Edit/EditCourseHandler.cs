@@ -41,7 +41,7 @@ public class EditCourseHandler(ICourseRepository repository, ICourseService serv
         }
 
         course.Edit(request.Title, request.Description, imageName, videoName, _courseService, request.CourseLevel, request.CourseStatus, request.Price,
-            request.SeoData, request.SubCategoryId, request.CategoryId, request.Slug);
+            request.SeoData, request.SubCategoryId, request.CategoryId, request.Slug, request.ActionStatus);
 
         await _courseRepository.Save();
 

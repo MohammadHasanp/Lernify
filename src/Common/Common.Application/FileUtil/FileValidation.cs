@@ -27,6 +27,7 @@ namespace Common.Application.FileUtil
         public static bool IsValidImageFile(string fileName)
         {
             if (string.IsNullOrEmpty(fileName)) return false;
+
             var path = Path.GetExtension(fileName);
             path = path.ToLower();
             if (path == ".jpg" || path == ".png" || path == ".bmp" || path == ".svg" || path == ".jpeg")

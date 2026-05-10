@@ -7,10 +7,16 @@ public enum CourseStatus
     InProgress,
 }
 
-
 public enum CourseLevel
 {
     Expert,
     Intermediate,
     Beginner,
+}
+
+public enum CourseActionStatus
+{
+    Pending,
+    Active,
+    DeActive,
 }

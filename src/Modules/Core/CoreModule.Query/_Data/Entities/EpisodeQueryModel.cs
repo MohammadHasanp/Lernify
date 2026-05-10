@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreModule.Query._Data.Entities;
 
-[Table("Episodes", Schema = "dbo")]
+[Table("Episodes", Schema = "course")]
 class EpisodeQueryModel : Entity
 {
     public Guid SectionId { get; internal set; }
