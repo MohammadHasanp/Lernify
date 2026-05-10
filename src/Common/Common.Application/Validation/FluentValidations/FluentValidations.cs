@@ -40,6 +40,19 @@ public static class FluentValidations
             }
         });
 
+    public static IRuleBuilderOptionsConditions<T, TProperty> JustValidCompressFile<T, TProperty>(
+        this IRuleBuilder<T, TProperty> ruleBuilder, string errorMessage = "فایل نامعتبر است") where TProperty : IFormFile? =>
+        ruleBuilder.Custom((file, context) =>
+        {
+            if (file == null)
+                return;
+
+            if (!FileValidation.IsValidCompressFile(file))
+            {
+                context.AddFailure(errorMessage);
+            }
+        });
+
     public static IRuleBuilderOptionsConditions<T, string> ValidNationalCode<T>(this IRuleBuilder<T, string> ruleBuilder, string errorMessage = "کد ملی نامعتبر است") =>
         ruleBuilder.Custom((nationalCode, context) =>
         {

@@ -10,8 +10,8 @@ public class Section : Entity
     public string Title { get; private set; } = null!;
     public int DisplayOrder { get; private set; }
 
-    public List<Episode> Episodes { get; private set; } = []; 
-    
+    public List<Episode> Episodes { get; private set; } = [];
+
     public Section(string title, int displayOrder)
     {
         Guard(title, displayOrder);
@@ -26,13 +26,17 @@ public class Section : Entity
         Title = title;
         DisplayOrder = displayOrder;
     }
-    public void AddEpisode(string title, Guid token, TimeSpan time, string videoName, string? attachmentName, bool isActive, string englishTitle)
+    public Episode AddEpisode(string title, Guid token, TimeSpan time, string videoName, string? attachmentName, bool isActive, string englishTitle)
     {
         if (Episodes.Any(e => e.Title == title))
             throw new InvalidDomainDataException("title Is Exists");
 
-        Episodes.ForEach(e => e.SectionId.Equals(Id));
-        Episodes.Add(new Episode(title, token, time, videoName, attachmentName, isActive, englishTitle));
+        var episode = new Episode(title, token, time, videoName, attachmentName, isActive, englishTitle)
+        {
+            SectionId = Id
+        };
+        Episodes.Add(episode);
+        return episode;
     }
 
     void Guard(string title, int DisplayOrder)

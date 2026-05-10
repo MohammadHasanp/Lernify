@@ -31,13 +31,13 @@ class CategoryService : IBlogService
     private readonly ICategoryRepository _CategoryRepository;
     private readonly IPostRepository _postRepository;
     private readonly IMapper _mapper;
-    private readonly IStorageService _storageService;
-    public CategoryService(ICategoryRepository repository, IMapper mapper, IPostRepository postRepository, IStorageService storageService)
+    private readonly ILocalFileService _localFileService;
+    public CategoryService(ICategoryRepository repository, IMapper mapper, IPostRepository postRepository, ILocalFileService localFileService)
     {
         _CategoryRepository = repository;
         _mapper = mapper;
         _postRepository = postRepository;
-        _storageService = storageService;
+        _localFileService = localFileService;
     }
 
     public async Task<OperationResult> CreateCategory(CreateCategoryCommand command)
@@ -60,7 +60,7 @@ class CategoryService : IBlogService
         if (!command.ImageFile.IsImage())
             return OperationResult.Error("Image Invalid");
 
-        var imageName = await _storageService.SaveFileAndGenerateName(command.ImageFile, BlogDirectories.PostImage);
+        var imageName = await _localFileService.SaveFileAndGenerateName(command.ImageFile, BlogDirectories.PostImage);
 
         post.ImageName = imageName;
         post.Visit = 0;
@@ -93,7 +93,7 @@ class CategoryService : IBlogService
 
         _postRepository.Delete(post);
         await _postRepository.Save();
-        _storageService.DeleteFile(BlogDirectories.PostImage, post.ImageName);
+        _localFileService.DeleteFile(BlogDirectories.PostImage, post.ImageName);
         return OperationResult.Success();
     }
 
@@ -132,7 +132,7 @@ class CategoryService : IBlogService
 
             else
             {
-                var imageName = await _storageService.SaveFileAndGenerateName(command.ImageFile, BlogDirectories.PostImage);
+                var imageName = await _localFileService.SaveFileAndGenerateName(command.ImageFile, BlogDirectories.PostImage);
                 post.ImageName = imageName;
             }
 

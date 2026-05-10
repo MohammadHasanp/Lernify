@@ -2,7 +2,6 @@
 
 namespace CoreModule.Config;
 
-using Common.Application.FileUtil.StorageFactory;
 using Common.Application.FileUtil.StorageInterfaces;
 using Common.Application.FileUtil.StorageServices;
 using CoreModule.Application._Utilities;
@@ -33,8 +32,7 @@ public static class CoreModuleBootstrapper
         services.AddScoped<ICourseService, CourseService>();
         services.AddScoped<ICourseCategoryService, CourseCategoryServide>();
         services.AddScoped<ITeacherService, TeacherService>();
-        services.AddScoped<IStorageService, FileStorageService>();
-        services.AddScoped<IStorageServiceFactory, StorageServiceFactory>();
+        services.AddScoped<ILocalFileService, LocalFileService>();
 
         return services;
     }

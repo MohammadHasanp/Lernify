@@ -20,8 +20,4 @@
     <ProjectReference Include="..\CoreModule.Infrastructure\CoreModule.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Courses\GetById\" />
-  </ItemGroup>
-
 </Project>

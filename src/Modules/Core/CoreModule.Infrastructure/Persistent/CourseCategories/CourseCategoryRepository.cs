@@ -1,4 +1,4 @@
-﻿using CoreModule.Domain.Categories.Models;
+﻿using CoreModule.Domain.Categories;
 using CoreModule.Domain.Categories.Repository;
 using CoreModule.Infrastructure.Persistent._Context;
 using Microsoft.EntityFrameworkCore;

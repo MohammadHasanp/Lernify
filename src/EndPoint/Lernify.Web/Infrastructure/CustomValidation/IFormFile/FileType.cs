@@ -23,7 +23,7 @@ namespace Lernify.Web.Infrastructure.CustomValidation.IFormFile
 
 
             var fileType = Path.GetExtension(fileInput.FileName);
-            return fileType == type;
+            return fileType == $".{type}";
         }
 
         public void AddValidation(ClientModelValidationContext context)
@@ -31,7 +31,7 @@ namespace Lernify.Web.Infrastructure.CustomValidation.IFormFile
             if (!context.Attributes.ContainsKey("data-val"))
                 context.Attributes.Add("data-val", "true");
             context.Attributes.Add("fileType", type);
-            context.Attributes.Add("accept",$".{type}");
+            context.Attributes.Add("accept", $".{type}");
             context.Attributes.Add("data-val-fileType", ErrorMessage);
         }
     }

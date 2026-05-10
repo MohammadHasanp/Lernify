@@ -1,5 +1,5 @@
 ﻿using Common.Application;
-using CoreModule.Domain.Categories.Models;
+using CoreModule.Domain.Categories;
 using CoreModule.Domain.Categories.Repository;
 using CoreModule.Domain.Categories.Services;
 

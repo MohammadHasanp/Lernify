@@ -16,6 +16,9 @@ public class CourseConfig : IEntityTypeConfiguration<Course>
             .IsRequired()
             .HasMaxLength(200);
 
+        builder.Property(c => c.Id)
+            .ValueGeneratedNever();
+
         builder.Property(c => c.Description)
             .IsRequired()
             .HasMaxLength(1000);
@@ -38,60 +41,66 @@ public class CourseConfig : IEntityTypeConfiguration<Course>
 
         builder.OwnsOne(b => b.SeoData, config =>
         {
-            config.Property(b => b.MetaDescription)
+            config.Property(o => o.MetaDescription)
                 .HasMaxLength(500)
                 .HasColumnName("MetaDescription");
 
-            config.Property(b => b.MetaTitle)
+            config.Property(o => o.MetaTitle)
                 .HasMaxLength(500)
                 .HasColumnName("MetaTitle");
 
-            config.Property(b => b.MetaKeyWords)
+            config.Property(o => o.MetaKeyWords)
                 .HasMaxLength(500)
                 .HasColumnName("MetaKeyWords");
 
-            config.Property(b => b.IndexPage)
+            config.Property(o => o.IndexPage)
                 .HasColumnName("IndexPage");
 
-            config.Property(b => b.Canonical)
+            config.Property(o => o.Canonical)
                 .HasMaxLength(500)
                 .HasColumnName("Canonical");
 
-            config.Property(b => b.Schema)
+            config.Property(o => o.Schema)
                 .HasColumnName("Schema");
         });
 
-        builder.OwnsMany(c => c.Sections, config =>
+        builder.OwnsMany(t => t.Sections, option =>
         {
-            config.ToTable("Sections", "course");
-            config.HasKey(c => c.Id);
+            option.ToTable("Sections", "course");
+            option.HasKey(n => n.Id);
 
-            config.Property(s => s.Title)
+            option.Property(n => n.Id)
+                .ValueGeneratedNever();
+
+            option.Property(n => n.Title)
             .IsRequired()
             .HasMaxLength(200);
 
-            config.Property(s => s.DisplayOrder)
+            option.Property(n => n.DisplayOrder)
             .IsRequired();
 
-            config.OwnsMany(s => s.Episodes, e =>
+            option.OwnsMany(p => p.Episodes, e =>
             {
                 e.ToTable("Episodes", "course");
-                e.HasKey(c => c.Id);
-                e.HasIndex(c => c.Token);
+                e.HasKey(x => x.Id);
+                e.HasIndex(x => x.Token);
 
-                e.Property(e => e.Title)
+                e.Property(x => x.Id)
+                    .ValueGeneratedNever();
+
+                e.Property(x => x.Title)
                 .IsRequired()
                 .HasMaxLength(200);
 
-                e.Property(e => e.EnglishTitle)
+                e.Property(x => x.EnglishTitle)
                 .IsRequired()
                 .HasMaxLength(100);
 
-                e.Property(c => c.VideoName)
+                e.Property(x => x.VideoName)
                 .IsRequired(false)
                 .HasMaxLength(200);
 
-                e.Property(c => c.AttachmentName)
+                e.Property(x => x.AttachmentName)
                  .IsRequired(false)
                  .HasMaxLength(100);
             });

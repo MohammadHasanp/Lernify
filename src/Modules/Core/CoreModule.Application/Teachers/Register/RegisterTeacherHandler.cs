@@ -7,14 +7,14 @@ using CoreModule.Domain.Teachers.Service;
 
 namespace CoreModule.Application.Teachers.Register;
 
-public class RegisterTeacherHandler(IStorageService storageService, ITeacherService service, ITeacherRepository repository) : IBaseCommandHandler<RegisterTeacherCommand>
+public class RegisterTeacherHandler(ILocalFileService localFileService, ITeacherService service, ITeacherRepository repository) : IBaseCommandHandler<RegisterTeacherCommand>
 {
     private readonly ITeacherRepository _repository = repository;
     private readonly ITeacherService _service = service;
-    private readonly IStorageService _storageService = storageService;
+    private readonly ILocalFileService _localFileService = localFileService;
     public async Task<OperationResult> Handle(RegisterTeacherCommand request, CancellationToken cancellationToken)
     {
-        var cvFileName = await _storageService.SaveFileAndGenerateName(request.CvFile, CoreModuleDirectories.CvFileNames);
+        var cvFileName = await _localFileService.SaveFileAndGenerateName(request.CvFile, CoreModuleDirectories.CvFileNames);
 
         var teacher = new Teacher(request.UserId, request.UserName, cvFileName, _service);
 

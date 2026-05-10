@@ -8,11 +8,11 @@ namespace CoreModule.Domain.Courses.Models;
 public class Episode : Entity
 {
     public Guid SectionId { get; internal set; }
-    public string Title { get; private set; } = null!;
-    public string EnglishTitle { get; private set; } = null!;
+    public string Title { get; private set; }
+    public string EnglishTitle { get; private set; }
     public Guid Token { get; private set; }
     public TimeSpan Time { get; private set; }
-    public string VideoName { get; private set; } = null!;
+    public string VideoName { get; private set; }
     public string? AttachmentName { get; private set; }
     public bool IsActive { get; private set; }
 

@@ -283,12 +283,12 @@ $(document).on("submit",
 
 
 function loadCkeditor4() {
-    if (!document.getElementById("ckeditor4"))
+    if (!document.getElementById("ckeditor"))
         return;
 
     $("body").prepend(`<script src="/ckeditor/ckeditor.js"></script>`);
     setTimeout(() => {
-        CKEDITOR.replace('ckeditor4', {
+        CKEDITOR.replace('ckeditor', {
             customConfig: '/ckeditor/config.js'
         });
     }, 500);

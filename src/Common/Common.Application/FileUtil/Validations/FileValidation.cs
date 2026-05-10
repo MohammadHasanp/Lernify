@@ -10,9 +10,6 @@ public static class FileValidation
 {
     public static bool IsValidFile(this IFormFile file)
     {
-        if (file == null)
-            return false;
-
         var path = Path.GetExtension(file.FileName);
         path = path.ToLower(CultureInfo.CurrentCulture);
         return path is ".mp4" or ".mp3" or ".zip" or
@@ -25,11 +22,15 @@ public static class FileValidation
             ".bmp" or ".wmf" or ".gif" or ".log";
     }
 
+    public static bool IsValidCompressFile(this IFormFile file)
+    {
+        var path = Path.GetExtension(file.FileName);
+        path = path.ToLower(CultureInfo.CurrentCulture);
+        return path is ".zip" or ".rar";
+    }
+
     public static bool IsValidVideoFile(this IFormFile file)
     {
-        if (file == null)
-            return false;
-
         var path = Path.GetExtension(file.FileName);
         path = path.ToLower(CultureInfo.CurrentCulture);
 
@@ -38,9 +39,6 @@ public static class FileValidation
 
     public static bool IsValidImageFile(this IFormFile ImageFile)
     {
-        if (ImageFile == null)
-            return false;
-
         var path = Path.GetExtension(ImageFile.FileName);
         path = path.ToLower(CultureInfo.CurrentCulture);
         return path is ".jpg" or ".png" or ".bmp" or ".svg" or ".jpeg";

@@ -73,8 +73,10 @@ public class Course : AggregateRoot
         if (Sections.Any(s => s.Title == title))
             throw new InvalidDomainDataException("title Is Exsist");
 
-        Sections.ForEach(e => e.CourseId.Equals(Id));
-        Sections.Add(new Section(title, displayOrder));
+        Sections.Add(new Section(title, displayOrder)
+        {
+            CourseId = Id
+        });
     }
 
     public void RemoveSection(Guid sectionId)
@@ -95,8 +97,8 @@ public class Course : AggregateRoot
         section.Edit(title, displayOrder);
     }
 
-    public void AddEpisode(Guid sectionId, string title, Guid token, TimeSpan time, string videoExtension, string? attachmentExtension,
-        bool isActive, string englishTitle)
+    public Episode AddEpisode(Guid sectionId, string title, Guid token, TimeSpan time, string videoExtension,
+        string? attachmentExtension, bool isActive, string englishTitle)
     {
         var section = Sections.FirstOrDefault(s => s.Id == sectionId);
         if (section == null)
@@ -121,7 +123,8 @@ public class Course : AggregateRoot
 
 
 
-        section.AddEpisode(title, token, time, vidName, attName, isActive, englishTitle);
+        var episode = section.AddEpisode(title, token, time, vidName, attName, isActive, englishTitle);
+        return episode;
     }
 
     public void AcceptEpisode(Guid episodeId, Guid sectionId)

@@ -22,10 +22,9 @@ namespace CoreModule.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CoreModule.Domain.Categories.Models.CourseCategory", b =>
+            modelBuilder.Entity("CoreModule.Domain.Categories.CourseCategory", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTimeOffset>("CreationDate")
@@ -49,6 +48,8 @@ namespace CoreModule.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ParentId");
+
                     b.HasIndex("Slug")
                         .IsUnique();
 
@@ -58,7 +59,6 @@ namespace CoreModule.Infrastructure.Migrations
             modelBuilder.Entity("CoreModule.Domain.Courses.Models.Course", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("CategoryId")
@@ -127,7 +127,6 @@ namespace CoreModule.Infrastructure.Migrations
             modelBuilder.Entity("CoreModule.Domain.Teachers.Teacher", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTimeOffset>("CreationDate")
@@ -207,6 +206,14 @@ namespace CoreModule.Infrastructure.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("CoreModule.Domain.Categories.CourseCategory", b =>
+                {
+                    b.HasOne("CoreModule.Domain.Categories.CourseCategory", null)
+                        .WithMany()
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
             modelBuilder.Entity("CoreModule.Domain.Courses.Models.Course", b =>
                 {
                     b.OwnsOne("Common.Domain.ValueObjects.SeoData", "SeoData", b1 =>
@@ -253,7 +260,6 @@ namespace CoreModule.Infrastructure.Migrations
                     b.OwnsMany("CoreModule.Domain.Courses.Models.Section", "Sections", b1 =>
                         {
                             b1.Property<Guid>("Id")
-                                .ValueGeneratedOnAdd()
                                 .HasColumnType("uniqueidentifier");
 
                             b1.Property<Guid>("CourseId")
@@ -285,7 +291,6 @@ namespace CoreModule.Infrastructure.Migrations
                             b1.OwnsMany("CoreModule.Domain.Courses.Models.Episode", "Episodes", b2 =>
                                 {
                                     b2.Property<Guid>("Id")
-                                        .ValueGeneratedOnAdd()
                                         .HasColumnType("uniqueidentifier");
 
                                     b2.Property<string>("AttachmentName")

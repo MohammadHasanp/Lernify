@@ -53,6 +53,8 @@ public class Program
         app.MapRazorPages()
            .WithStaticAssets();
 
+        app.MapDefaultControllerRoute(); 
+
         app.Run();
     }
 }

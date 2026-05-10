@@ -12,6 +12,7 @@ internal class GetAllCourseCategoryHandler(QueryContext queryContext) : IQueryHa
     public async Task<List<CourseCategoryDto>> Handle(GetAllCourseCategoryQuery request, CancellationToken cancellationToken)
     {
         return await _queryContext.CourseCategories.Where(c => c.ParentId == null)
+            .Include(c => c.Childs)
             .OrderBy(t => t.CreationDate)
             .Select(s => new CourseCategoryDto
             {
@@ -20,7 +21,18 @@ internal class GetAllCourseCategoryHandler(QueryContext queryContext) : IQueryHa
                 IsDelete = s.IsDelete,
                 Title = s.Title,
                 Slug = s.Slug,
-                ParentId = s.ParentId
+                ParentId = s.ParentId,
+                Childs = s.Childs.Select(h => new CategoryChildDto
+                {
+                    Id = h.Id,
+                    CreationDate = h.CreationDate,
+                    IsDelete = h.IsDelete,
+                    Title = h.Title,
+                    Slug = h.Slug,
+                    ParentId = h.ParentId,
+
+
+                }).ToList()
             }).ToListAsync(cancellationToken);
     }
 }

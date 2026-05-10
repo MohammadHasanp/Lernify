@@ -13,6 +13,9 @@ public class TeacherConfig : IEntityTypeConfiguration<Teacher>
         builder.HasKey(t => t.Id);
         builder.HasIndex(t => t.UserName).IsUnique();
 
+        builder.Property(c => c.Id)
+            .ValueGeneratedNever();
+
         builder.Property(b => b.UserName)
           .IsRequired()
           .IsUnicode(false)

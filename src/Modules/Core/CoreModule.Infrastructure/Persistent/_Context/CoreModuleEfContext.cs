@@ -1,5 +1,5 @@
 ﻿using Common.Domain;
-using CoreModule.Domain.Categories.Models;
+using CoreModule.Domain.Categories;
 using CoreModule.Domain.Courses.Models;
 using CoreModule.Domain.Teachers;
 using CoreModule.Infrastructure.Persistent.Users;
@@ -20,8 +20,8 @@ public class CoreModuleEfContext(DbContextOptions<CoreModuleEfContext> option, I
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {
-        var modifiedEntities = GetModifiedEntities();
-        await PublishEvents(modifiedEntities);
+        //var modifiedEntities = GetModifiedEntities();
+        //await PublishEvents(modifiedEntities);
         return await base.SaveChangesAsync(cancellationToken);
     }
     private List<AggregateRoot> GetModifiedEntities() =>
