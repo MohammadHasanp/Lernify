@@ -1,4 +1,5 @@
 ﻿using Common.Application;
+using CoreModule.Application.CourseCategories.AddChild;
 using CoreModule.Application.CourseCategories.Create;
 using CoreModule.Application.CourseCategories.Delete;
 using CoreModule.Application.CourseCategories.Edit;
@@ -11,10 +12,12 @@ public interface ICourseCategoryFacade
 {
     Task<OperationResult> Create(CreateCourseCategoryCommand command);
     Task<OperationResult> Edit(EditCourseCategoryCommand command);
-    Task<OperationResult> Delete(DeleteCourseCategoryCommand command);
+    Task<OperationResult> Delete(Guid id);
+    Task<OperationResult> AddChild(AddChildCourseCategoryCommand command);
 
 
-    Task<List<CourseCategoryDto>> GetMainCategory();
+    Task<List<CourseCategoryDto?>> GetMainCategory();
+    Task<CourseCategoryDto?> GetById(Guid id);
     Task<List<CourseCategoryDto>> GetChildrenCategory(Guid parentId);
 
 }

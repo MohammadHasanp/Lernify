@@ -1,81 +1,86 @@
-﻿@page
-@using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
+﻿@page "{handler?}"
 @model Lernify.Web.Areas.Admin.Pages.Courses.Categories.IndexModel
 @{
     ViewData["Title"] = "دسته بندی ها";
     ViewData["selected"] = "";
-
+    Layout = "Shared/_AdminLayout";
 }
-< class="row ">
-<a asp-page="Add" class="btn btn-save mr-2 mb-4 float-right">افزودن دسته بندی</a>
-<div class="col-12 info shadow pl-0 pr-0">
-    <p class="title">
-        <i class="fa fa-paper-plane"></i>
-        @ViewData["Title"]
-    </p>
-    <div class="info-body ">
-        <div id="accordion">
-            @if (Model.CategoryDto.Count > 0)
-            {
-                @foreach (var item in Model.CategoryDto)
+<div class="row">
+    <a asp-page="Add" class="btn btn-success mr-2 mb-4">افزودن دسته بندی</a>
+    <div class="col-12">
+        <p class="title" style="color: black; font-size: larger;">
+            <i class="fa fa-paper-plane"></i>
+            @ViewData["Title"]
+        </p>
+        <hr />
+        <div class="info-body">
+            <div id="accordion">
+                @if (Model.CategoryDto.Count > 0)
                 {
-                    <div class="card">
-                        <div class="card-header" id="h_@item.Id">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link " data-toggle="collapse" data-target="#a_@item.Id" aria-expanded="true" aria-controls="a_@item.Id">
-                                    @item.Title
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="a_@item.Id" class="collapse " aria-labelledby="h_@item.Id" data-parent="#accordion">
-                            <div class="card-body">
-                                <a asp-page="AddChilds" asp-route-categoryId="@item.Id" class="btn btn-save mr-2 mb-4 float-right">افزودن زیر دسته بندی</a>
-                                <table class="table   table-hover  table-striped text-center">
-                                    <thead>
-                                        <tr>
-                                            <th>عنوان</th>
-                                            <th>slug</th>
-                                            <th>عملیات</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @if (item.Childs.Count > 0)
-                                        {
-                                            @foreach (var child in item.Childs)
+                    @foreach (var item in Model.CategoryDto)
+                    {
+                        <div>
+                            <div class="" id="h_@item!.Id">
+                                <h5>
+                                    <button style="font-size: medium;" class="btn btn-link " data-toggle="collapse" data-target="#a_@item.Id" aria-expanded="true"
+                                            aria-controls="a_@item.Id">
+                                        @item.Title
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="a_@item.Id" class="collapse " aria-labelledby="h_@item.Id" data-parent="#accordion">
+                                <div class="card-body">
+                                    <a asp-page="Add" asp-route-parentId="@item.Id" class="btn btn-success">افزودن زیر دسته بندی</a>
+                                    <a asp-page="Edit" asp-route-id="@item.Id" class="btn btn-info">ویرایش</a>
+                                    <delete-item url="@Url.Page("Index", "Delete", new { id = item.Id })">حذف</delete-item>
+                                    <table class="table table-hover  table-striped text-center">
+                                        <thead>
+                                            <tr>
+                                                <th style="font-size: medium;">عنوان</th>
+                                                <th style="font-size: medium;">slug</th>
+                                                <th style="font-size: medium;">عملیات</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (item.Childs.Count > 0)
                                             {
-                                                <tr>
-                                                    <td>@child.Title</td>
-                                                    <td>@child.Slug</td>
-                                                    <td>
-                                                        <a asp-page="Edit" asp-route-courseId="@item.Id"
-                                                           class="btn btn-info mr-2 mb-4">ویرایش</a>
-                                                    </td>
+                                                @foreach (var child in item.Childs)
+                                                {
+                                                    <tr>
+                                                        <td>@child.Title</td>
+                                                        <td>@child.Slug</td>
+                                                        <td>
+                                                            <a asp-page="Edit" asp-route-id="@child.Id" class="btn btn-primary">ویرایش</a>
+                                                            <delete-item url="@Url.Page("Index", "Delete", new { id = child.Id })">حذف</delete-item>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <tr class="table   table-hover  table-striped text-center">
+                                                    <td colspan="5">موردی برای نمایش یافت نشد</td>
                                                 </tr>
                                             }
-                                        }
-                                        else
-                                        {
-                                            <tr>
-                                                <td colspan="5">موردی برای نمایش یافت نشد</td>
-                                            </tr>
-                                        }
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <hr />
+                    }
                 }
-            }
-            else
-            {
-                <table class="table   table-hover  table-striped text-center">
-                    <tbody>
-                        <tr>
-                            <td colspan="5">موردی برای نمایش یافت نشد</td>
-                        </tr>
-                    </tbody>
-                </table>
-            }
+                else
+                {
+                    <table class="table   table-hover  table-striped text-center">
+                        <tbody>
+                            <tr>
+                                <td colspan="5">موردی برای نمایش یافت نشد</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+            </div>
         </div>
     </div>
 </div>

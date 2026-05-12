@@ -14,5 +14,5 @@ public class CategoryChildDto : BaseDto
 {
     public string Title { get; set; } = null!;
     public string Slug { get; set; } = null!;
-    public Guid? ParentId { get; set; }
+    public Guid ParentId { get; set; }
 }

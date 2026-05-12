@@ -18,7 +18,7 @@ public class CourseCategory : AggregateRoot
     {
         Guard(title, slug, service);
         Title = title;
-        Slug = slug;
+        Slug = slug.ToSlug();
         ParentId = parentId;
     }
 
@@ -26,7 +26,7 @@ public class CourseCategory : AggregateRoot
     {
         Guard(title, slug, service);
         Title = title;
-        Slug = slug;
+        Slug = slug.ToSlug();
     }
 
 

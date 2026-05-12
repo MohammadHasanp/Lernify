@@ -29,7 +29,7 @@ internal class GetAllCourseCategoryHandler(QueryContext queryContext) : IQueryHa
                     IsDelete = h.IsDelete,
                     Title = h.Title,
                     Slug = h.Slug,
-                    ParentId = h.ParentId,
+                    ParentId = (Guid)h.ParentId!,
 
 
                 }).ToList()
