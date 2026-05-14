@@ -48,8 +48,6 @@ function ErrorAlert(Title, description, isReload = false) {
     if (description == null || description == "undefined") {
         description = "";
     }
-    console.log("خریییی")
-
     Swal.fire({
         title: Title,
         html: description,
@@ -61,6 +59,72 @@ function ErrorAlert(Title, description, isReload = false) {
         }
     });
 }
+
+function Question(url, QuestionTitle, QuestionText, successText, callBack) {
+    if (QuestionTitle == null || QuestionTitle == "undefined") {
+        QuestionTitle = "آیا از انجام عملیات اطمینان دارید؟";
+    }
+    if (QuestionText == null || QuestionText == "undefined") {
+        QuestionText = "";
+    }
+
+    Swal.fire({
+        title: QuestionTitle,
+        text: QuestionText,
+        icon: "question",
+        confirmButtonText: "بله",
+        showCancelButton: true,
+        cancelButtonText: "خیر",
+        preConfirm: () => {
+            var token = $("#ajax-token input").val();
+            $.ajax({
+                url: url,
+                type: "post",
+                data: {
+                    __RequestVerificationToken: token
+                },
+                beforeSend: function () {
+                    $(".loading").show();
+                },
+                complete: function () {
+                    $(".loading").hide();
+                },
+                error: function (data) {
+                    ErrorAlert("مشکلی در اعملیات رخ داده", "لطفا در زمان دیگری امتحان کنید");
+                }
+            }).done(function (data) {
+                try {
+                    data = JSON.parse(data);
+                    if (data.Status === 200) {
+                        Swal.fire({
+                            title: data.Title,
+                            text: successText == null ? data.Message : successText,
+                            icon: "success",
+                            confirmButtonText: "باشه",
+                        }).then(function (res) {
+                            if (data.IsReloadPage === true) {
+                                location.reload();
+                            } else {
+                                if (callBack) {
+                                    callBack(data.Status);
+                                }
+                            }
+                        });
+                    } else if (data.Status === 10) {
+                        ErrorAlert(data.Title, data.Message);
+                    } else if (data.Status === 404) {
+                        Warning(data.Title, data.Message);
+                    }
+                } catch (ex) {
+                    ErrorAlert();
+                }
+            });
+
+
+        }
+    });
+}
+
 function Warning(Title, description, isReload = false) {
     if (Title == null || Title == "undefined") {
         Title = "مشکلی در عملیات رخ داده است";

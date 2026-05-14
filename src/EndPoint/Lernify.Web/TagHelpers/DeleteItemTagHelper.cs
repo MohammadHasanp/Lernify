@@ -7,7 +7,7 @@ namespace Lernify.Web.TagHelpers
     {
         public string Url { get; set; } = null!;
         public string Description { get; set; } = "";
-        public string Class { get; set; } = "btn btn-danger btn-sm";
+        public string Class { get; set; } = "btn btn-danger";
         public bool IsButtonTag { get; set; } = false;
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {

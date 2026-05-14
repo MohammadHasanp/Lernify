@@ -57,6 +57,7 @@ public class CourseFilterData : BaseDto
 public class CourseFilterParams : BaseFilterParam
 {
     public Guid? TeacherId { get; set; }
+    public CourseActionStatus? ActionStatus { get; set; }
 }
 
 public class CourseFilterResult : BaseFilter<CourseFilterData>

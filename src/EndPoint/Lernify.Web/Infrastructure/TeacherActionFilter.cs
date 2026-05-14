@@ -19,7 +19,6 @@ public class TeacherActionFilter(ITeacherFaced teacherFaced) : ActionFilterAttri
         if (teacher != null || teacher!.TeacherStatus != TeacherStatus.Active)
             context.Result = new RedirectResult("/Profile");
 
-
         await next();
     }
 }

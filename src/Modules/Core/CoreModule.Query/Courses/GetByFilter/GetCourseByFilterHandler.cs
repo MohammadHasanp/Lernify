@@ -19,6 +19,9 @@ internal class GetCourseByFilterHandler(QueryContext queryContext) : IQueryHandl
         if (@params.TeacherId != null)
             result = result.Where(c => c.TeacherId == @params.TeacherId);
 
+        if (@params.ActionStatus != null)
+            result = result.Where(d => d.ActionStatus == @params.ActionStatus);
+
         var skip = (@params.PageId - 1) * @params.Take;
         var courses = await result.Skip(skip).Take(@params.Take).ToListAsync(cancellationToken);
         var model = new CourseFilterResult
@@ -31,9 +34,9 @@ internal class GetCourseByFilterHandler(QueryContext queryContext) : IQueryHandl
                 ImageName = c.ImageName,
                 Title = c.Title,
                 Slug = c.Slug,
-                ActionStatus = c.CourseActionStatus,
+                ActionStatus = c.ActionStatus,
                 Price = c.Price,
-                EpisodeCount = c.Sections.Sum(s => s.Episodes.Count)
+                EpisodeCount = c.Sections.Sum(s => s.Episodes.Count),
             }).ToList(),
         };
 

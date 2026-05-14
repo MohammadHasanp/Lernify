@@ -1,7 +1,6 @@
 ﻿using Common.Application;
 using CoreModule.Application.CourseCategories.AddChild;
 using CoreModule.Application.CourseCategories.Create;
-using CoreModule.Application.CourseCategories.Delete;
 using CoreModule.Application.CourseCategories.Edit;
 using CoreModule.Query.CourseCategories.DTOs;
 

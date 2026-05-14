@@ -12,9 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Courses\Episodes\Accept\" />
     <Folder Include="Courses\Episodes\Edit\" />
-    <Folder Include="Courses\Episodes\Delete\" />
     <Folder Include="Courses\Sections\Edit\" />
   </ItemGroup>
 

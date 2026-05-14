@@ -1,6 +1,5 @@
 ﻿using Lernify.Web.Infrastructure.Util;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using UserModule.Core.Services;
 
 namespace Lernify.Web.Infrastructure.JwtUtil
 {

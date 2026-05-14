@@ -27,8 +27,4 @@
   <Folder Name="/src/Modules/Ticket/">
     <Project Path="src/Modules/Ticket/TicketModule/TicketModule.csproj" Id="2e0256c7-15c8-4156-84a4-e23a65bf9660" />
   </Folder>
-  <Folder Name="/src/Modules/User/">
-    <Project Path="src/Modules/User/User.Module.Data/UserModule.Data.csproj" Id="04f8ebbe-47da-4e96-9f03-235a731b5393" />
-    <Project Path="src/Modules/User/UserModule.Core/UserModule.Core.csproj" Id="4a8858eb-6973-46bd-b254-c6e863c6a6d5" />
-  </Folder>
 </Solution>

@@ -20,7 +20,7 @@ public class Course : AggregateRoot
     public string? VideoName { get; private set; }
     public CourseStatus CourseStatus { get; private set; }
     public CourseLevel CourseLevel { get; private set; }
-    public CourseActionStatus CourseActionStatus { get; private set; }
+    public CourseActionStatus ActionStatus { get; private set; }
     public int Price { get; private set; }
     public DateTimeOffset LastUpdate { get; private set; }
     public SeoData? SeoData { get; private set; }
@@ -30,14 +30,14 @@ public class Course : AggregateRoot
     public Course(Guid teacherId, string title, string description, string imageName, string? videoName, ICourseService service,
         CourseLevel courseLevel, int price, SeoData? seoData, Guid subCategoryId, Guid categoryId, string slug, CourseActionStatus actionStatus)
     {
-        Gurad(title, description, imageName, slug, service);
+        Guard(title, description, imageName, slug, service);
         TeacherId = teacherId;
         Title = title;
         Description = description;
         ImageName = imageName;
         VideoName = videoName;
         CourseStatus = CourseStatus.StartSoon;
-        CourseActionStatus = actionStatus;
+        ActionStatus = actionStatus;
         CourseLevel = courseLevel;
         Price = price;
         LastUpdate = DateTimeOffset.UtcNow;
@@ -51,14 +51,14 @@ public class Course : AggregateRoot
     public void Edit(string title, string description, string imageName, string? videoName, ICourseService service,
         CourseLevel courseLevel, CourseStatus courseStatus, int price, SeoData? seoData, Guid subCategoryId, Guid categoryId, string slug, CourseActionStatus actionStatus)
     {
-        Gurad(title, description, imageName, slug, service);
+        Guard(title, description, imageName, slug, service);
         Title = title;
         Description = description;
         ImageName = imageName;
         VideoName = videoName;
         CourseStatus = courseStatus;
         CourseLevel = courseLevel;
-        CourseActionStatus = actionStatus;
+        ActionStatus = actionStatus;
         Price = price;
         LastUpdate = DateTimeOffset.UtcNow;
         SeoData = seoData;
@@ -127,21 +127,31 @@ public class Course : AggregateRoot
         return episode;
     }
 
-    public void AcceptEpisode(Guid episodeId, Guid sectionId)
+    public void AcceptEpisode(Guid episodeId)
     {
-        var section = Sections.FirstOrDefault(s => s.Id == sectionId);
+        var section = Sections.FirstOrDefault(s => s.Episodes.Any(e => e.Id == episodeId && !e.IsActive));
         if (section == null)
             throw new NullOrEmptyDomainDataException("section NotFound");
 
-        var episode = section.Episodes.FirstOrDefault(e => e.Id == episodeId && e.IsActive == false);
-        if (episode == null)
-            throw new NullOrEmptyDomainDataException("episode NotFound");
+        var episode = section.Episodes.First(e => e.Id == episodeId);
 
         episode.ToggleStatus();
         LastUpdate = DateTimeOffset.UtcNow;
     }
 
-    void Gurad(string title, string description, string imageName, string slug, ICourseService service)
+    public Episode DeleteEpisode(Guid episodeId)
+    {
+        var section = Sections.FirstOrDefault(s => s.Episodes.Any(e => e.Id == episodeId));
+        if (section == null)
+            throw new NullOrEmptyDomainDataException("section NotFound");
+
+        var episode = section.Episodes.First(e => e.Id == episodeId);
+
+        section.Episodes.Remove(episode);
+        return episode;
+    }
+
+    private void Guard(string title, string description, string imageName, string slug, ICourseService service)
     {
         NullOrEmptyDomainDataException.CheckString((title, nameof(title)), (description, nameof(description)), (imageName, nameof(imageName)));
 

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace Eshop_RazorPage.TagHelpers
+namespace Lernify.Web.TagHelpers
 {
     [HtmlTargetElement("submit", TagStructure = TagStructure.WithoutEndTag)]
     public class SubmitButton : TagHelper
