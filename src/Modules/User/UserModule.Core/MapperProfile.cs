@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
+using User.Module.Data.Entities.UserNotifications;
 using UserModule.Core.Commands.Users.UserNotifications.Create;
 using UserModule.Core.Queries.Users.DTOs;
-using UserModule.Data.Entities.UserNotifications;
-using UserModule.Data.Entities.Users;
+using User.Module.Data.Entities.Users;
 
 namespace UserModule.Core;
 
@@ -10,7 +10,7 @@ class MapperProfile : Profile
 {
     public MapperProfile()
     {
-        CreateMap<UserDto, User>().ReverseMap();
+        CreateMap<UserDto,User.Module.Data.Entities.Users.User>().ReverseMap();
         CreateMap<CreateUserNotificationCommand, UserNotification>().ReverseMap();
     }
 }

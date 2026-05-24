@@ -33,11 +33,23 @@ public class Episode : Entity
         IsActive = !IsActive;
     }
 
-    void Guard(string videoName, string title, string englishTitle)
+    private static void Guard(string videoName, string title, string englishTitle)
     {
         NullOrEmptyDomainDataException.CheckString((videoName, nameof(videoName)), (title, nameof(title)), (englishTitle, nameof(englishTitle)));
 
         if (englishTitle.IsUniCode())
             throw new InvalidDomainDataException("englishTitle Invalid");
+    }
+
+    public void Edit(string title, bool isActive, TimeSpan timeSpan, string? attachmentName)
+    {
+        NullOrEmptyDomainDataException.CheckString((title, nameof(title)));
+        Title = title;
+        IsActive = isActive;
+        Time = timeSpan;
+        if (!string.IsNullOrWhiteSpace(attachmentName))
+        {
+            AttachmentName = attachmentName;
+        }
     }
 }

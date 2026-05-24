@@ -1,6 +1,6 @@
 ﻿using Common.Application;
 using Microsoft.EntityFrameworkCore;
-using UserModule.Data.Context;
+using User.Module.Data.Context;
 
 namespace UserModule.Core.Commands.Users.UserNotifications.Seen;
 
@@ -9,7 +9,7 @@ public class SeenNotificationHandler(UserContext context) : IBaseCommandHandler<
     private readonly UserContext _userContext = context;
     public async Task<OperationResult> Handle(SeenNotificationCommand request, CancellationToken cancellationToken)
     {
-        var notification = await _userContext.Notifications.FirstOrDefaultAsync(n => n.UserId == request.UserId && n.Id == request.NotificatiuonId);
+        var notification = await _userContext.Notifications.FirstOrDefaultAsync(n => n.UserId == request.UserId && n.Id == request.NotificatiuonId, cancellationToken: cancellationToken);
         if (notification == null)
             return OperationResult.NotFound();
 

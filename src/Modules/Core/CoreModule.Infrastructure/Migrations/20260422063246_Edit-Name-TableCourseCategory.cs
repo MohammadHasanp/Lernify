@@ -31,7 +31,7 @@ namespace CoreModule.Infrastructure.Migrations
                 name: "PK_Categories",
                 schema: "course",
                 table: "Categories",
-                column: "Id");
+                column: "EpisodeId");
         }
 
         /// <inheritdoc />
@@ -58,7 +58,7 @@ namespace CoreModule.Infrastructure.Migrations
                 name: "PK_Category",
                 schema: "course",
                 table: "Category",
-                column: "Id");
+                column: "EpisodeId");
         }
     }
 }

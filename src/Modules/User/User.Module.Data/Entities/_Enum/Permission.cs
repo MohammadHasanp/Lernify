@@ -1,4 +1,4 @@
-﻿namespace UserModule.Data.Entities._Enum;
+﻿namespace User.Module.Data.Entities._Enum;
 
 public enum Permission
 {

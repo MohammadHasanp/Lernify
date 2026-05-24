@@ -37,9 +37,9 @@ public class Course : AggregateRoot
         ImageName = imageName;
         VideoName = videoName;
         CourseStatus = CourseStatus.StartSoon;
-        ActionStatus = actionStatus;
         CourseLevel = courseLevel;
         Price = price;
+        ActionStatus = actionStatus;
         LastUpdate = DateTimeOffset.UtcNow;
         SeoData = seoData;
         Sections = [];
@@ -66,8 +66,6 @@ public class Course : AggregateRoot
         CategoryId = categoryId;
         Slug = slug;
     }
-
-
     public void AddSection(string title, int displayOrder)
     {
         if (Sections.Any(s => s.Title == title))
@@ -109,9 +107,9 @@ public class Course : AggregateRoot
 
         string? attName = null;
         if (!string.IsNullOrWhiteSpace(attachmentExtension))
-            attName = $"{episodeTitle}.{attachmentExtension}";
+            attName = $"{episodeTitle}{attachmentExtension}";
 
-        var vidName = $"{episodeTitle}.{videoExtension}";
+        var vidName = $"{episodeTitle}{videoExtension}";
 
         if (isActive)
         {
@@ -125,6 +123,17 @@ public class Course : AggregateRoot
 
         var episode = section.AddEpisode(title, token, time, vidName, attName, isActive, englishTitle);
         return episode;
+    }
+
+    public void EditEpisode(Guid episodeId, Guid sectionId, string title, bool isActive, TimeSpan timeSpan, string? attachmentName)
+    {
+        var section = Sections.FirstOrDefault(f => f.Id == sectionId);
+        if (section == null) throw new InvalidDomainDataException("Section NotFound");
+
+        var episode = section.Episodes.FirstOrDefault(f => f.Id == episodeId);
+        if (episode == null) throw new InvalidDomainDataException("episode NotFound");
+
+        episode.Edit(title, isActive, timeSpan, attachmentName);
     }
 
     public void AcceptEpisode(Guid episodeId)
@@ -149,6 +158,12 @@ public class Course : AggregateRoot
 
         section.Episodes.Remove(episode);
         return episode;
+    }
+
+    public Episode? GetEpisodeById(Guid episodeId)
+    {
+        var section = Sections.FirstOrDefault(f => f.Episodes.Any(e => e.Id == episodeId));
+        return section?.Episodes.FirstOrDefault(f => f.Id == episodeId);
     }
 
     private void Guard(string title, string description, string imageName, string slug, ICourseService service)

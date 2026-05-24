@@ -1,7 +1,7 @@
 ﻿using Common.Domain;
-using UserModule.Data.Entities.Roles;
+using User.Module.Data.Entities.Roles;
 
-namespace UserModule.Data.Entities.Users;
+namespace User.Module.Data.Entities.Users;
 
 public class UserRole : Entity
 {

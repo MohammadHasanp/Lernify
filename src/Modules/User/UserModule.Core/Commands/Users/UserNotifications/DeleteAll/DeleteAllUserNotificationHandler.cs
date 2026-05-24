@@ -1,6 +1,6 @@
 ﻿using Common.Application;
 using Microsoft.EntityFrameworkCore;
-using UserModule.Data.Context;
+using User.Module.Data.Context;
 
 namespace UserModule.Core.Commands.Users.UserNotifications.DeleteAll;
 

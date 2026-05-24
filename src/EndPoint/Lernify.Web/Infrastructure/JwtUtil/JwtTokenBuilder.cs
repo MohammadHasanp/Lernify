@@ -2,6 +2,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using UserModule.Core.Queries.Users.DTOs;
 
 namespace Lernify.Web.Infrastructure.JwtUtil
 {

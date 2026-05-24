@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Common.Application;
-using UserModule.Data.Context;
-using UserModule.Data.Entities.UserNotifications;
+using User.Module.Data.Context;
+using User.Module.Data.Entities.UserNotifications;
 
 
 namespace UserModule.Core.Commands.Users.UserNotifications.Create;

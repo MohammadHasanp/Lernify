@@ -1,6 +1,5 @@
 ﻿using Common.Application.Validation;
 using FluentValidation;
-using Microsoft.EntityFrameworkCore;
 
 namespace UserModule.Core.Commands.Users.ChangePassword;
 

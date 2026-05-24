@@ -17,6 +17,7 @@ public class CourseDto : BaseDto
     public string? VideoName { get; set; }
     public CourseLevel CourseLevel { get; set; }
     public CourseStatus CourseStatus { get; set; }
+    public CourseActionStatus ActionStatus { get; set; }
     public int Price { get; set; }
     public DateTimeOffset LastUpdate { get; set; }
     public SeoData? SeoData { get; set; }

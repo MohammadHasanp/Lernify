@@ -36,6 +36,7 @@ internal class GetCourseByIdHandler(QueryContext queryContext) : IQueryHandler<G
             Price = course.Price,
             LastUpdate = course.LastUpdate,
             SeoData = course.SeoData,
+            ActionStatus = course.ActionStatus,
             Sections = course.Sections.Select(f => new CourseSectionDto
             {
                 Id = f.Id,

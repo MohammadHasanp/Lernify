@@ -108,7 +108,7 @@ namespace CoreModule.Infrastructure.Migrations
                         column: x => x.CourseId,
                         principalSchema: "dbo",
                         principalTable: "Courses",
-                        principalColumn: "Id",
+                        principalColumn: "EpisodeId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -132,7 +132,7 @@ namespace CoreModule.Infrastructure.Migrations
                         name: "FK_Teachers_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "Id",
+                        principalColumn: "EpisodeId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -161,7 +161,7 @@ namespace CoreModule.Infrastructure.Migrations
                         column: x => x.SectionId,
                         principalSchema: "course",
                         principalTable: "Sections",
-                        principalColumn: "Id",
+                        principalColumn: "EpisodeId",
                         onDelete: ReferentialAction.Cascade);
                 });
 

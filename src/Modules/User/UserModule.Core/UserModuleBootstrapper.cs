@@ -2,10 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using User.Module.Data.Context;
 using UserModule.Core.Commands.Users.Register;
 using UserModule.Core.Queries.Users.DTOs;
 using UserModule.Core.Services;
-using UserModule.Data.Context;
 namespace UserModule.Core;
 
 public static class UserModuleBootstrapper

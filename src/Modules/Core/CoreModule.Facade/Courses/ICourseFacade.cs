@@ -4,6 +4,7 @@ using CoreModule.Application.Courses.Edit;
 using CoreModule.Application.Courses.Episodes.Accept;
 using CoreModule.Application.Courses.Episodes.Add;
 using CoreModule.Application.Courses.Episodes.Delete;
+using CoreModule.Application.Courses.Episodes.Edit;
 using CoreModule.Application.Courses.Sections.Add;
 using CoreModule.Query.Courses.DTOs;
 using CoreModule.Query.Courses.Episodes.DTOs;
@@ -16,6 +17,7 @@ public interface ICourseFacade
     public Task<OperationResult> Edit(EditCourseCommand command);
     public Task<OperationResult> AddSection(AddSectionCommand command);
     public Task<OperationResult> AddEpisode(AddEpisodeCommand command);
+    public Task<OperationResult> EditEpisode(EditEpisodeCommand command);
     public Task<OperationResult> AcceptEpisode(AcceptCourseEpisodeCommand command);
     public Task<OperationResult> DeleteEpisode(DeleteCourseEpisodeCommand command);
 

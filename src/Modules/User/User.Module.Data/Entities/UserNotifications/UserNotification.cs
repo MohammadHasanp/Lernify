@@ -1,8 +1,7 @@
-﻿
+﻿using System.ComponentModel.DataAnnotations;
 using Common.Domain;
-using System.ComponentModel.DataAnnotations;
 
-namespace UserModule.Data.Entities.UserNotifications;
+namespace User.Module.Data.Entities.UserNotifications;
 
 public class UserNotification : Entity
 {

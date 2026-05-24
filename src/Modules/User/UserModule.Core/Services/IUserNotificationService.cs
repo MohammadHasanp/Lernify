@@ -6,7 +6,6 @@ using UserModule.Core.Commands.Users.UserNotifications.DeleteAll;
 using UserModule.Core.Commands.Users.UserNotifications.Seen;
 using UserModule.Core.Queries.Users.DTOs;
 using UserModule.Core.Queries.Users.UserNotifications.GetFilter;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace UserModule.Core.Services;
 

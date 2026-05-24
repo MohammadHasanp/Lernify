@@ -1,7 +1,7 @@
 ﻿using Common.Domain;
-using UserModule.Data.Entities._Enum;
+using User.Module.Data.Entities._Enum;
 
-namespace UserModule.Data.Entities.Roles;
+namespace User.Module.Data.Entities.Roles;
 
 public class RolePermission : Entity
 {

@@ -1,12 +1,13 @@
-﻿namespace UserModule.Core.Queries.Users.GetById;
+﻿using User.Module.Data.Context;
+using UserModule.Core.Queries.Users.DTOs;
+
+namespace UserModule.Core.Queries.Users.GetById;
 
 using AutoMapper;
 using Common.Query;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
-using UserModule.Core.Queries.Users.DTOs;
-using UserModule.Data.Context;
 
 public class GetUserByIdHandler(UserContext context, IMapper mapper) : IQueryHandler<GetUserByIdQuery, UserDto?>
 {

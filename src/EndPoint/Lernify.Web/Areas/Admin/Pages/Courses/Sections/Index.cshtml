@@ -7,7 +7,7 @@
 }
 <h2>@ViewData["title"]</h2>
 <div class="collapsible">
-    @foreach (var item in Model.Course.Sections)
+    @foreach (var item in Model.Course.Sections.OrderBy(s => s.DisplayOrder))
     {
         <div class="card collapse-header">
             <div id="c_@item.Id" class="card-header" data-toggle="collapse" role="button" data-target="#r_@item.Id" aria-controls="r_@item.Id" aria-expanded="false">

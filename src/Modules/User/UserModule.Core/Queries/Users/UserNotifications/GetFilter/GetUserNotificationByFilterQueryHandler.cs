@@ -1,7 +1,7 @@
 ﻿using Common.Query;
 using Microsoft.EntityFrameworkCore;
+using User.Module.Data.Context;
 using UserModule.Core.Queries.Users.DTOs;
-using UserModule.Data.Context;
 
 namespace UserModule.Core.Queries.Users.UserNotifications.GetFilter;
 
@@ -28,7 +28,7 @@ public class GetUserNotificationByFilterQueryHandler(UserContext context) : IQue
                 Text = n.Text,
                 Title = n.Title,
                 UserId = n.UserId
-            }).ToListAsync()
+            }).ToListAsync(cancellationToken: cancellationToken)
         };
 
         model.GeneratePaging(result, @params.Take, @params.PageId);

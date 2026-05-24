@@ -8,12 +8,11 @@ using CoreModule.Domain.Courses.Service;
 namespace CoreModule.Application.Courses.Edit;
 
 
-public class EditCourseHandler(ICourseRepository repository, ICourseService service, ILocalFileService fileService) :
-    IBaseCommandHandler<EditCourseCommand>
+public class EditCourseHandler(ICourseRepository repository, ICourseService service, ILocalFileService fileService) : IBaseCommandHandler<EditCourseCommand>
 {
     private readonly ICourseRepository _courseRepository = repository;
     private readonly ICourseService _courseService = service;
-    private readonly ILocalFileService _ftpFileService = fileService;
+    private readonly ILocalFileService _fileService = fileService;
     public async Task<OperationResult> Handle(EditCourseCommand request, CancellationToken cancellationToken)
     {
         var course = await _courseRepository.GetTracking(request.CourseId);
@@ -29,14 +28,14 @@ public class EditCourseHandler(ICourseRepository repository, ICourseService serv
         if (request.VideoFile != null)
             if (request.VideoFile.IsValidVideoFile())
             {
-                videoName = await _ftpFileService!.SaveFileAndGenerateName(request.VideoFile, CoreModuleDirectories.GetCourseVideos(course.Id));
+                videoName = await _fileService!.SaveFileAndGenerateName(request.VideoFile, CoreModuleDirectories.GetCourseVideos(course.Id));
             }
             else
                 return OperationResult.Error("فایل وارد شده نامعتبر است");
 
         if (request.ImageFile.IsImage() && request.ImageFile != null)
         {
-            imageName = await _ftpFileService!.SaveFileAndGenerateName(request.ImageFile, CoreModuleDirectories.CourseImages);
+            imageName = await _fileService!.SaveFileAndGenerateName(request.ImageFile, CoreModuleDirectories.CourseImages);
         }
 
         course.Edit(request.Title, request.Description, imageName, videoName, _courseService, request.CourseLevel, request.CourseStatus, request.Price,
@@ -51,9 +50,9 @@ public class EditCourseHandler(ICourseRepository repository, ICourseService serv
     private void DeleteOldFiles(string? oldImageName, string? oldVideoName, EditCourseCommand command)
     {
         if (oldVideoName != null && string.IsNullOrWhiteSpace(oldVideoName) == false)
-            _ftpFileService.DeleteFile(CoreModuleDirectories.CourseVideos, oldVideoName);
+            _fileService.DeleteFile(CoreModuleDirectories.CourseVideos, oldVideoName);
 
         if (oldImageName != null && string.IsNullOrWhiteSpace(oldImageName) == false)
-            _ftpFileService.DeleteFile(CoreModuleDirectories.CourseImages, oldImageName);
+            _fileService.DeleteFile(CoreModuleDirectories.CourseImages, oldImageName);
     }
 }

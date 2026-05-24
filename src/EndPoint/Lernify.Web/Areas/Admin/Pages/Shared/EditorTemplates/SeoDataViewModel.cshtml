@@ -1,0 +1,32 @@
+﻿@model Lernify.Web.Infrastructure.ViewModel.SeoDataViewModel
+
+<div class="col-6">
+    <label asp-for="@Model.MetaTitle"></label>
+    <input asp-for="@Model.MetaTitle" type="text" class="form-control">
+    <span class="text-danger" asp-validation-for="@Model.MetaTitle"></span>
+</div>
+<div class="col-6">
+    <label asp-for="@Model.MetaKeyWords"></label>
+    <input asp-for="@Model.MetaKeyWords" type="text" class="form-control">
+    <span class="text-danger" asp-validation-for="@Model.MetaKeyWords"></span>
+</div>
+<div class="col-6">
+    <label asp-for="@Model.MetaDescription"></label>
+    <input asp-for="@Model.MetaDescription" type="text" class="form-control">
+    <span class="text-danger" asp-validation-for="@Model.MetaDescription"></span>
+</div>
+<div class="col-6">
+    <label asp-for="@Model.Canonical"></label>
+    <input asp-for="@Model.Canonical" type="text" class="form-control">
+    <span class="text-danger" asp-validation-for="@Model.Canonical"></span>
+</div>
+<div class="col-6">
+    <label asp-for="@Model.Schema"></label>
+    <input asp-for="@Model.Schema" type="text" class="form-control">
+    <span class="text-danger" asp-validation-for="@Model.Schema"></span>
+</div>
+<div class="col-6">
+    <label asp-for="@Model.IndexPage"></label>
+    <input asp-for="@Model.IndexPage" type="text" class="form-control">
+    <span class="text-danger" asp-validation-for="@Model.IndexPage"></span>
+</div>

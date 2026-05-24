@@ -34,10 +34,10 @@ public class AddEpisodeHandler(ICourseRepository courseRepository, ILocalFileSer
     {
 
         await _fileService.SaveFile(request.VideoFile,
-            CoreModuleDirectories.GetCourseEpisode(request.CourseId, episode.Token, episode.VideoName));
+            CoreModuleDirectories.CourseEpisode(request.CourseId, episode.Token), episode.VideoName);
 
         if (request.AttachmentFile != null && request.AttachmentFile.IsValidCompressFile())
             await _fileService.SaveFile(request.AttachmentFile,
-                CoreModuleDirectories.GetCourseEpisode(request.CourseId, episode.Token, episode.AttachmentName!));
+                CoreModuleDirectories.CourseEpisode(request.CourseId, episode.Token), episode.AttachmentName!);
     }
 }

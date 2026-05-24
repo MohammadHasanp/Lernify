@@ -4,6 +4,7 @@ using CoreModule.Application.Courses.Edit;
 using CoreModule.Application.Courses.Episodes.Accept;
 using CoreModule.Application.Courses.Episodes.Add;
 using CoreModule.Application.Courses.Episodes.Delete;
+using CoreModule.Application.Courses.Episodes.Edit;
 using CoreModule.Application.Courses.Sections.Add;
 using CoreModule.Query.Courses.DTOs;
 using CoreModule.Query.Courses.Episodes.DTOs;
@@ -33,6 +34,11 @@ public class CourseFacade(IMediator mediator) : ICourseFacade
     }
 
     public async Task<OperationResult> AddEpisode(AddEpisodeCommand command)
+    {
+        return await _mediator.Send(command);
+    }
+
+    public async Task<OperationResult> EditEpisode(EditEpisodeCommand command)
     {
         return await _mediator.Send(command);
     }

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Common.Query;
 using Microsoft.EntityFrameworkCore;
+using User.Module.Data.Context;
 using UserModule.Core.Queries.Users.DTOs;
-using UserModule.Data.Context;
 
 namespace UserModule.Core.Queries.Users.GetByMobile;
 

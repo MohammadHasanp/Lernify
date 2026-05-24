@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Courses\Episodes\Edit\" />
     <Folder Include="Courses\Sections\Edit\" />
   </ItemGroup>
 

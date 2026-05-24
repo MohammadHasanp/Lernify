@@ -46,6 +46,21 @@ public class LocalFileService : ILocalFileService
         await file.CopyToAsync(stream);
     }
 
+    public async Task SaveFile(IFormFile file, string directoryPath, string fileName)
+    {
+        if (file == null)
+            throw new InvalidDataException("file is Null");
+
+        var folderName = Path.Combine(Directory.GetCurrentDirectory(), directoryPath.Replace("/", "\\"));
+        if (!Directory.Exists(folderName))
+            Directory.CreateDirectory(folderName);
+
+        var path = Path.Combine(folderName, fileName);
+        using var stream = new FileStream(path, FileMode.Create);
+
+        await file.CopyToAsync(stream);
+    }
+
     public async Task<string> SaveFileAndGenerateName(IFormFile file, string directoryPath)
     {
         if (file == null)

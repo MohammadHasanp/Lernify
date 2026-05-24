@@ -23,7 +23,7 @@ namespace CoreModule.Infrastructure.Migrations
                 column: "ParentId",
                 principalSchema: "course",
                 principalTable: "Categories",
-                principalColumn: "Id",
+                principalColumn: "EpisodeId",
                 onDelete: ReferentialAction.Restrict);
         }
 

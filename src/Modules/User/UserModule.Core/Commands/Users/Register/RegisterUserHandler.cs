@@ -1,8 +1,7 @@
 ﻿using Common.Application;
 using Common.Application.SecurityUtil;
 using Microsoft.EntityFrameworkCore;
-using UserModule.Data.Entities.Users;
-using UserModule.Data.Context;
+using User.Module.Data.Context;
 
 
 namespace UserModule.Core.Commands.Users.Register;
@@ -12,10 +11,10 @@ public class RegisterUserHandler(UserContext context) : IBaseCommandHandler<Regi
     private readonly UserContext _context = context;
     public async Task<OperationResult<Guid>> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
     {
-        if (await _context.Users.AnyAsync(u => u.Mobile == request.Mobile))
+        if (await _context.Users.AnyAsync(u => u.Mobile == request.Mobile, cancellationToken: cancellationToken))
             return OperationResult<Guid>.Error("شماره تلفن تکراری است");
 
-        var user = new User
+        var user = new User.Module.Data.Entities.Users.User
         {
             Mobile = request.Mobile,
             Password = Sha256Hasher.Hash(request.Password),

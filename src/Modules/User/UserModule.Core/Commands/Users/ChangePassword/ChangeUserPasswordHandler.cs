@@ -1,30 +1,23 @@
 ﻿using Common.Application;
 using Common.Application.SecurityUtil;
 using Microsoft.EntityFrameworkCore;
-using UserModule.Data.Context;
+using User.Module.Data.Context;
 
 namespace UserModule.Core.Commands.Users.ChangePassword;
 
-public class ChangeUserPasswordHandler : IBaseCommandHandler<ChangeUserPasswordCommand>
+public class ChangeUserPasswordHandler(UserContext context) : IBaseCommandHandler<ChangeUserPasswordCommand>
 {
-    private readonly UserContext _context;
-
-    public ChangeUserPasswordHandler(UserContext context)
-    {
-        _context = context;
-    }
-
     public async Task<OperationResult> Handle(ChangeUserPasswordCommand request, CancellationToken cancellationToken)
     {
-        var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == request.UserId);
+        var user = await context.Users.FirstOrDefaultAsync(u => u.Id == request.UserId, cancellationToken: cancellationToken);
         if (user == null)
             return OperationResult.NotFound();
 
         if (Sha256Hasher.IsCompare(user.Password, request.CurrentPasssword))
         {
             user.Password = Sha256Hasher.Hash(request.NewPassword);
-            _context.Update(user);
-            await _context.SaveChangesAsync(cancellationToken);
+            context.Update(user);
+            await context.SaveChangesAsync(cancellationToken);
             return OperationResult.Success();
         }
 

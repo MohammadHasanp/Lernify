@@ -27,4 +27,11 @@
   <Folder Name="/src/Modules/Ticket/">
     <Project Path="src/Modules/Ticket/TicketModule/TicketModule.csproj" Id="2e0256c7-15c8-4156-84a4-e23a65bf9660" />
   </Folder>
+  <Folder Name="/src/Modules/User/" />
+  <Folder Name="/src/Modules/User/User.Module.Data/">
+    <Project Path="src/Modules/User/User.Module.Data/User.Module.Data.csproj" Id="c0162118-d5ff-412e-a180-c0a248c28ed8" />
+  </Folder>
+  <Folder Name="/src/Modules/User/UserModule.Core/">
+    <Project Path="src/Modules/User/UserModule.Core/UserModule.Core.csproj" Id="40bce484-9eb4-4c07-8585-7678b64d046b" />
+  </Folder>
 </Solution>

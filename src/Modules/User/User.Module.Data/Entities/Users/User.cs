@@ -1,7 +1,7 @@
-﻿using Common.Domain;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using Common.Domain;
 
-namespace UserModule.Data.Entities.Users;
+namespace User.Module.Data.Entities.Users;
 
 public class User : Entity
 {

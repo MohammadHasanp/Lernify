@@ -24,7 +24,7 @@ namespace CoreModule.Infrastructure.Migrations
 
             modelBuilder.Entity("CoreModule.Domain.Categories.CourseCategory", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("EpisodeId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTimeOffset>("CreationDate")
@@ -46,7 +46,7 @@ namespace CoreModule.Infrastructure.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.HasKey("Id");
+                    b.HasKey("EpisodeId");
 
                     b.HasIndex("ParentId");
 
@@ -58,7 +58,7 @@ namespace CoreModule.Infrastructure.Migrations
 
             modelBuilder.Entity("CoreModule.Domain.Courses.Models.Course", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("EpisodeId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("ActionStatus")
@@ -116,7 +116,7 @@ namespace CoreModule.Infrastructure.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.HasKey("Id");
+                    b.HasKey("EpisodeId");
 
                     b.HasIndex("Slug")
                         .IsUnique();
@@ -126,7 +126,7 @@ namespace CoreModule.Infrastructure.Migrations
 
             modelBuilder.Entity("CoreModule.Domain.Teachers.Teacher", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("EpisodeId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTimeOffset>("CreationDate")
@@ -151,7 +151,7 @@ namespace CoreModule.Infrastructure.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)");
 
-                    b.HasKey("Id");
+                    b.HasKey("EpisodeId");
 
                     b.HasIndex("UserId")
                         .IsUnique();
@@ -164,7 +164,7 @@ namespace CoreModule.Infrastructure.Migrations
 
             modelBuilder.Entity("CoreModule.Infrastructure.Persistent.Users.User", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("EpisodeId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -201,7 +201,7 @@ namespace CoreModule.Infrastructure.Migrations
                         .HasMaxLength(70)
                         .HasColumnType("nvarchar(70)");
 
-                    b.HasKey("Id");
+                    b.HasKey("EpisodeId");
 
                     b.ToTable("Users");
                 });
@@ -259,7 +259,7 @@ namespace CoreModule.Infrastructure.Migrations
 
                     b.OwnsMany("CoreModule.Domain.Courses.Models.Section", "Sections", b1 =>
                         {
-                            b1.Property<Guid>("Id")
+                            b1.Property<Guid>("EpisodeId")
                                 .HasColumnType("uniqueidentifier");
 
                             b1.Property<Guid>("CourseId")
@@ -279,7 +279,7 @@ namespace CoreModule.Infrastructure.Migrations
                                 .HasMaxLength(200)
                                 .HasColumnType("nvarchar(200)");
 
-                            b1.HasKey("Id");
+                            b1.HasKey("EpisodeId");
 
                             b1.HasIndex("CourseId");
 
@@ -290,7 +290,7 @@ namespace CoreModule.Infrastructure.Migrations
 
                             b1.OwnsMany("CoreModule.Domain.Courses.Models.Episode", "Episodes", b2 =>
                                 {
-                                    b2.Property<Guid>("Id")
+                                    b2.Property<Guid>("EpisodeId")
                                         .HasColumnType("uniqueidentifier");
 
                                     b2.Property<string>("AttachmentName")
@@ -329,7 +329,7 @@ namespace CoreModule.Infrastructure.Migrations
                                         .HasMaxLength(200)
                                         .HasColumnType("nvarchar(200)");
 
-                                    b2.HasKey("Id");
+                                    b2.HasKey("EpisodeId");
 
                                     b2.HasIndex("SectionId");
 
